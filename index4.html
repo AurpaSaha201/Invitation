@@ -1,498 +1,817 @@
 <!DOCTYPE html>
 <html lang="bn">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Wedding Invitation</title>
+    <title>শুভ বিবাহ - নিমন্ত্রণ</title>
 
-  <link
-    href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
+    <!-- Bengali Font -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Galada&family=Noto+Serif+Bengali:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
 
-  <style>
-    * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+    <style>
 
-body {
-  font-family: "Noto Serif Bengali", serif;
-  background: #f7efd9;
-}
+        /* =====================================================
+           RESET
+        ===================================================== */
 
-/* =========================
-   MAIN PAGE
-========================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-.invitation-page {
-  width: 100%;
-  min-height: 100vh;
 
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
+        html,
+        body {
+            width: 100%;
+            min-height: 100%;
+        }
 
-  padding: 20px;
-}
 
-/* =========================
-   INVITATION CARD
-========================= */
+        body {
+            background: #fcf3d9;
 
-.invitation-card {
-  position: relative;
+            font-family: "Noto Serif Bengali", serif;
 
-  width: 600px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
 
-  overflow: hidden;
+            overflow-x: hidden;
+        }
 
-  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.12);
-}
 
-/* Background Image */
+        /* =====================================================
+           MAIN INVITATION CARD
+        ===================================================== */
 
-.invitation-bg {
-  display: block;
+        .invitation-card {
 
-  width: 100%;
-  height: auto;
+            position: relative;
 
-  object-fit: contain;
-}
+            width: 100%;
 
-/* =========================
-   TEXT CONTENT
-========================= */
+            max-width: 596px;
 
-.invitation-content {
-  position: absolute;
+            min-height: 900px;
 
-  top: 27%;
-  left: 50%;
+            background-image: url("63.jpg");
 
-  transform: translateX(-50%);
+            background-repeat: no-repeat;
 
-  width: 70%;
+            background-position: center top;
 
-  text-align: center;
+            background-size: 100% 100%;
 
-  color: #513b32;
-}
+            overflow: hidden;
 
-/* Heading */
+            box-shadow:
+                0 0 25px rgba(0, 0, 0, 0.20);
+        }
 
-.invitation-content h2 {
-  font-size: 22px;
-  font-weight: 700;
 
-  margin-bottom: 12px;
+        /* =====================================================
+           CLICK ME BUTTON
+        ===================================================== */
 
-  color: #633b2e;
-}
+        .click-button {
 
-.invitation-content h3 {
-  font-size: 18px;
-  font-weight: 600;
+            position: absolute;
 
-  margin-bottom: 18px;
+            top: 18px;
 
-  color: #765043;
-}
+            right: 14px;
 
-/* Paragraph */
+            z-index: 100;
 
-.invitation-content p {
-  font-size: 14px;
-  line-height: 1.8;
+            width: 155px;
 
-  text-align: justify;
+            height: 48px;
 
-  margin-bottom: 13px;
-}
+            display: flex;
 
-.invitation-content strong {
-  color: #633b2e;
-}
+            align-items: center;
 
-/* Family */
+            justify-content: center;
 
-.family {
-  margin-top: 20px;
+            background: #8b0000;
 
-  display: flex;
-  flex-direction: column;
+            border: 2px solid #d7aa43;
 
-  align-items: center;
+            border-radius: 30px;
 
-  gap: 2px;
-}
+            color: #fff4d5;
 
-.family span {
-  font-size: 13px;
-}
+            text-decoration: none;
 
-.family strong {
-  font-size: 16px;
-  color: #633b2e;
-}
+            font-family: Georgia, serif;
 
+            font-size: 18px;
 
-/* =====================================
-   LARGE LAPTOP
-   1200px+
-===================================== */
+            font-weight: bold;
 
-@media (min-width: 1200px) {
+            white-space: nowrap;
 
-  .invitation-page {
-    padding: 20px;
-  }
+            box-shadow:
+                0 5px 15px rgba(0, 0, 0, 0.30);
 
-  .invitation-card {
-    width: 650px;
-  }
+            transition: all 0.25s ease;
+        }
 
-  .invitation-content {
-    width: 70%;
-    top: 27%;
-  }
 
-  .invitation-content h2 {
-    font-size: 24px;
-  }
+        .click-button:hover {
 
-  .invitation-content h3 {
-    font-size: 20px;
-  }
+            background: #a00000;
 
-  .invitation-content p {
-    font-size: 15px;
-    line-height: 1.9;
-  }
-}
+            transform: translateY(-2px);
 
+            box-shadow:
+                0 7px 18px rgba(0, 0, 0, 0.35);
+        }
 
-/* =====================================
-   LAPTOP
-   992px - 1199px
-===================================== */
 
-@media (min-width: 992px) and (max-width: 1199px) {
+        .click-button:active {
 
-  .invitation-card {
-    width: 600px;
-  }
+            transform: scale(0.95);
+        }
 
-  .invitation-content {
-    width: 70%;
-    top: 27%;
-  }
 
-  .invitation-content h2 {
-    font-size: 22px;
-  }
+        /* =====================================================
+           INVITATION CONTENT
+        ===================================================== */
 
-  .invitation-content h3 {
-    font-size: 18px;
-  }
+        .invitation-content {
 
-  .invitation-content p {
-    font-size: 14px;
-    line-height: 1.8;
-  }
-}
+            position: relative;
 
+            width: 72%;
 
-/* =====================================
-   TABLET
-   768px - 991px
-===================================== */
+            margin-left: auto;
 
-@media (min-width: 768px) and (max-width: 991px) {
+            margin-right: auto;
 
-  .invitation-page {
-    padding: 15px;
-  }
+            /*
+              IMPORTANT:
+              Butterfly-এর জায়গা রাখার জন্য
+              content নিচ থেকে শুরু হবে
+            */
 
-  .invitation-card {
-    width: 560px;
-  }
+            padding-top: 280px;
 
-  .invitation-content {
-    width: 68%;
-    top: 27%;
-  }
+            padding-bottom: 150px;
 
-  .invitation-content h2 {
-    font-size: 20px;
-  }
+            text-align: center;
 
-  .invitation-content h3 {
-    font-size: 17px;
-  }
+            color: #a7450c;
+        }
 
-  .invitation-content p {
-    font-size: 12px;
-    line-height: 1.75;
-  }
 
-  .family span {
-    font-size: 11px;
-  }
+        /* =====================================================
+           MAIN TITLE
+        ===================================================== */
 
-  .family strong {
-    font-size: 14px;
-  }
-}
+        .invitation-content h2 {
 
+            font-family: "Galada", cursive;
 
-/* =====================================
-   PHONE
-   481px - 767px
-===================================== */
+            font-size: 36px;
 
-@media (min-width: 481px) and (max-width: 767px) {
+            font-weight: normal;
 
-  .invitation-page {
-    padding: 0;
-  }
+            line-height: 1.4;
 
-  .invitation-card {
-    width: 100%;
-    max-width: 600px;
+            color: #6a5211;
 
-    box-shadow: none;
-  }
+            text-align: center;
 
-  .invitation-content {
-    width: 68%;
+            margin: 0 0 25px 0;
 
-    top: 27%;
-  }
+            text-shadow:
+                0 1px 2px rgba(0, 0, 0, 0.30);
+        }
 
-  .invitation-content h2 {
-    font-size: 17px;
 
-    margin-bottom: 8px;
-  }
+        /* =====================================================
+           SUB TITLE
+        ===================================================== */
 
-  .invitation-content h3 {
-    font-size: 15px;
+        .invitation-content h3 {
 
-    margin-bottom: 10px;
-  }
+            font-family: "Galada", cursive;
 
-  .invitation-content p {
-    font-size: 10px;
-    line-height: 1.65;
+            font-size: 27px;
 
-    margin-bottom: 8px;
-  }
+            font-weight: normal;
 
-  .family {
-    margin-top: 12px;
-  }
+            line-height: 1.4;
 
-  .family span {
-    font-size: 9px;
-  }
+            color: #836513;
 
-  .family strong {
-    font-size: 12px;
-  }
-}
+            text-align: center;
 
+            margin: 0 0 42px 0;
+        }
 
-/* =====================================
-   SMALL PHONE
-   320px - 480px
-===================================== */
 
-@media (max-width: 480px) {
+        .invitation-content h3::before {
 
-  body {
-    background: #f7efd9;
-  }
+            content: "✦";
 
-  .invitation-page {
-    padding: 0;
-  }
+            color: #684f09;
 
-  .invitation-card {
-    width: 100%;
+            font-size: 20px;
 
-    box-shadow: none;
-  }
+            margin-right: 18px;
+        }
 
-  .invitation-bg {
-    width: 100%;
-    height: auto;
-  }
 
-  .invitation-content {
+        .invitation-content h3::after {
 
-    /* Text area */
-    width: 66%;
+            content: "✦";
 
-    top: 27%;
+            color: #9e7913;
 
-    left: 50%;
-  }
+            font-size: 17px;
 
-  .invitation-content h2 {
-    font-size: 14px;
+            margin-left: 18px;
+        }
 
-    margin-bottom: 6px;
-  }
 
-  .invitation-content h3 {
-    font-size: 12px;
+        /* =====================================================
+           PARAGRAPH
+        ===================================================== */
 
-    margin-bottom: 8px;
-  }
+        .invitation-content p {
 
-  .invitation-content p {
-    font-size: 8px;
+            width: 100%;
 
-    line-height: 1.55;
+            color: #82620b;
 
-    margin-bottom: 6px;
-  }
+            font-family: "Noto Serif Bengali", serif;
 
-  .family {
-    margin-top: 8px;
+            font-size: 20px;
 
-    gap: 0;
-  }
+            font-weight: 500;
 
-  .family span {
-    font-size: 7px;
-  }
+            line-height: 2;
 
-  .family strong {
-    font-size: 9px;
-  }
-}
-/* =========================
-   BACK BUTTON
-========================= */
+            text-align: justify;
 
-.back-button {
-  position: fixed;
+            margin: 0 0 25px 0;
+        }
 
-  top: 15px;
-  right: 15px;
 
-  z-index: 1000;
+        /* =====================================================
+           STRONG TEXT
+        ===================================================== */
 
-  padding: 8px 16px;
+        .invitation-content strong {
 
-  border: 2px solid #d6a72b;
-  border-radius: 30px;
+            color: #765a0e;
 
-  background: rgba(99, 59, 46, 0.9);
+            font-weight: 700;
+        }
 
-  color: #fff5dc;
 
-  font-family: "Noto Serif Bengali", serif;
-  font-size: 14px;
-  font-weight: 600;
+        /* =====================================================
+           FAMILY SECTION
+        ===================================================== */
 
-  text-decoration: none;
+        .family {
 
-  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
 
-  transition: 0.3s ease;
-}
+            margin-top: 45px;
 
-.back-button:hover {
-  background: #633b2e;
-  transform: translateY(-2px);
-}
+            padding-top: 25px;
 
+            border-top: 1px solid
+                rgba(218, 175, 59, 0.75);
 
-/* =========================
-   BACK BUTTON - MOBILE
-========================= */
+            display: flex;
 
-@media (max-width: 480px) {
+            flex-direction: column;
 
-  .back-button {
-    top: 10px;
-    right: 10px;
+            align-items: center;
 
-    padding: 6px 11px;
+            justify-content: center;
 
-    font-size: 11px;
+            gap: 8px;
 
-    border-width: 1.5px;
-  }
-}
-  </style>
+            color: #7b5f12;
+
+            font-size: 20px;
+
+            line-height: 1.6;
+        }
+
+
+        .family strong {
+
+            color: #92721b;
+
+            font-size: 20px;
+
+            font-weight: 700;
+        }
+
+
+        /* =====================================================
+           TABLET
+        ===================================================== */
+
+        @media (min-width: 601px) and (max-width: 900px) {
+
+            .invitation-card {
+
+                width: 100%;
+
+                max-width: 596px;
+
+                min-height: 1021px;
+
+                background-size: 100% 100%;
+            }
+
+
+            .click-button {
+
+                top: 16px;
+
+                right: 12px;
+
+                width: 145px;
+
+                height: 46px;
+
+                font-size: 17px;
+            }
+
+
+            .invitation-content {
+
+                width: 72%;
+
+                padding-top: 260px;
+
+                padding-bottom: 130px;
+            }
+
+
+            .invitation-content h2 {
+
+                font-size: 34px;
+            }
+
+
+            .invitation-content h3 {
+
+                font-size: 25px;
+            }
+
+
+            .invitation-content p {
+
+                font-size: 15px;
+
+                line-height: 1.95;
+            }
+        }
+
+
+        /* =====================================================
+           NORMAL PHONE
+        ===================================================== */
+
+        @media (min-width: 381px) and (max-width: 600px) {
+
+            .invitation-card {
+
+                width: 100%;
+
+                max-width: 596px;
+
+                min-height: 950px;
+
+                background-size: 100% 100%;
+            }
+
+
+            /* =========================
+               CLICK BUTTON
+            ========================= */
+
+            .click-button {
+
+                top: 12px;
+
+                right: 9px;
+
+                width: 125px;
+
+                height: 40px;
+
+                border-width: 1.5px;
+
+                border-radius: 25px;
+
+                font-size: 15px;
+            }
+
+
+            /* =========================
+               CONTENT
+            ========================= */
+
+            .invitation-content {
+
+                width: 72%;
+
+                margin-left: auto;
+
+                margin-right: auto;
+
+                /*
+                   Butterfly-এর নিচে
+                   Title শুরু হবে
+                */
+
+                padding-top: 240px;
+
+                padding-bottom: 100px;
+            }
+
+
+            /* =========================
+               TITLE
+            ========================= */
+
+            .invitation-content h2 {
+
+                font-size: 28px;
+
+                line-height: 1.4;
+
+                margin-bottom: 18px;
+            }
+
+
+            /* =========================
+               SUB TITLE
+            ========================= */
+
+            .invitation-content h3 {
+
+                font-size: 20px;
+
+                line-height: 1.4;
+
+                margin-bottom: 30px;
+            }
+
+
+            .invitation-content h3::before {
+
+                font-size: 12px;
+
+                margin-right: 8px;
+            }
+
+
+            .invitation-content h3::after {
+
+                font-size: 12px;
+
+                margin-left: 8px;
+            }
+
+
+            /* =========================
+               PARAGRAPH
+            ========================= */
+
+            .invitation-content p {
+
+                font-size: 15px;
+
+                line-height: 1.9;
+
+                margin-bottom: 16px;
+            }
+
+
+            /* =========================
+               FAMILY
+            ========================= */
+
+            .family {
+
+                margin-top: 28px;
+
+                padding-top: 15px;
+
+                gap: 5px;
+
+                font-size: 10px;
+
+                line-height: 1.7;
+            }
+
+
+            .family strong {
+
+                font-size: 12px;
+            }
+        }
+
+
+        /* =====================================================
+           SMALL PHONE
+        ===================================================== */
+
+        @media (max-width: 380px) {
+
+            .invitation-card {
+
+                width: 100%;
+
+                max-width: 596px;
+
+                min-height: 1010px;
+
+                background-size: 100% 100%;
+            }
+
+
+            /* =========================
+               CLICK BUTTON
+            ========================= */
+
+            .click-button {
+
+                top: 9px;
+
+                right: 7px;
+
+                width: 108px;
+
+                height: 36px;
+
+                border-width: 1.5px;
+
+                border-radius: 22px;
+
+                font-size: 13px;
+            }
+
+
+            /* =========================
+               CONTENT
+            ========================= */
+
+            .invitation-content {
+
+                width: 70%;
+
+                margin-left: auto;
+
+                margin-right: auto;
+
+                /*
+                   Butterfly-এর নিচে
+                   Title থাকবে
+                */
+
+                padding-top: 220px;
+
+                padding-bottom: 80px;
+            }
+
+
+            /* =========================
+               TITLE
+            ========================= */
+
+            .invitation-content h2 {
+
+                font-size: 21px;
+
+                line-height: 1.4;
+
+                margin-bottom: 15px;
+            }
+
+
+            /* =========================
+               SUB TITLE
+            ========================= */
+
+            .invitation-content h3 {
+
+                font-size: 17px;
+
+                line-height: 1.4;
+
+                margin-bottom: 24px;
+            }
+
+
+            .invitation-content h3::before {
+
+                font-size: 10px;
+
+                margin-right: 7px;
+            }
+
+
+            .invitation-content h3::after {
+
+                font-size: 10px;
+
+                margin-left: 7px;
+            }
+
+
+            /* =========================
+               PARAGRAPH
+            ========================= */
+
+            .invitation-content p {
+
+                font-size: 8.5px;
+
+                line-height: 1.85;
+
+                margin-bottom: 12px;
+            }
+
+
+            /* =========================
+               FAMILY
+            ========================= */
+
+            .family {
+
+                margin-top: 20px;
+
+                padding-top: 12px;
+
+                gap: 4px;
+
+                font-size: 8.5px;
+
+                line-height: 1.7;
+            }
+
+
+            .family strong {
+
+                font-size: 10px;
+            }
+        }
+
+    </style>
 </head>
 
+
 <body>
- <a href="index6.html" class="back-button">
-    ← 
-  </a>
-  <main class="invitation-page">
+
+
+    <!-- =====================================================
+         MAIN CARD
+    ===================================================== -->
 
     <div class="invitation-card">
 
-      <!-- Background Image -->
-      <img
-        src="60.jpg"
-        alt="Wedding Invitation"
-        class="invitation-bg"
-      />
 
-      <!-- Content -->
-      <div class="invitation-content">
+        <!-- =================================================
+             CLICK ME BUTTON
+        ================================================= -->
 
-        <h2>শ্রীশ্রী প্রজাপতয়ে নমঃ</h2>
+        <a
+            href="index6.html"
+            class="click-button"
+            id="backButton"
+        >
+            ← Click Me
+        </a>
 
-        <h3>সবিনয়ে নিবেদন</h3>
 
-        <p>
-          মহাশয়/মহাশয়া,
-        </p>
+        <!-- =================================================
+             INVITATION CONTENT
+        ================================================= -->
 
-        <p>
-          প্রজাপতি ঋষির আশীর্বাদে ও পবিত্র বেদমন্ত্র উচ্চারণের মাধ্যমে
-          আগামী <strong>২৬শে অগ্রহায়ণ, ১৪৩৩</strong> (ইং ১৩ ডিসেম্বর, ২০২৬) রবিবার
-          আমাদের পুত্র <strong>আবিরের</strong> সঙ্গে
-          গোয়ালা,টেকেরহাট নিবাসী স্বর্গীয় শেখর সাহা ও শ্রীমতী জলী সাহা মহাশয়ার
-          কনিষ্ঠ কন্যা <strong>নদীর</strong> শুভ বিবাহ সুসম্পন্ন হবে।
-        </p>
+        <div class="invitation-content">
 
-        <p>
-          এই শুভ উপলক্ষ্যে আগামী <strong>৩০ অগ্রহায়ণ , ১৪৩৩</strong>
-          (ইং ১৬ ডিসেম্বর, ২০২৬) বুধবার দুপুরে
-          <strong>"ইউনাইটেড ক্লাব,খুলনা"</strong>-এ আয়োজিত
-          প্রীতিভোজ অনুষ্ঠানে আপনি/আপনারা উপস্থিত থেকে
-          নবদম্পতিকে আশীর্বাদ করবেন—
-          একান্তভাবে এই কামনা করছি।
-        </p>
 
-        <p>
-          পত্রদ্বারা নিমন্ত্রণের ত্রুটি মার্জনীয়।
-        </p>
+            <!-- MAIN TITLE -->
 
-        <div class="family">
-          <span>বিনীত/বিনীতা</span>
-          <strong>প্রদীপ কুমার সাহা</strong>
-          <span>ও</span>
-          <strong>গীতা রানী সাহা</strong>
+            <h2>
+                শ্রীশ্রী প্রজাপতয়ে নমঃ
+            </h2>
+
+
+            <!-- SUB TITLE -->
+
+            <h3>
+                সবিনয়ে নিবেদন
+            </h3>
+
+
+            <!-- GREETING -->
+
+            <p>
+                মহাশয়/মহাশয়া,
+            </p>
+
+
+            <!-- FIRST PARAGRAPH -->
+
+            <p>
+                প্রজাপতি ঋষির আশীর্বাদে ও পবিত্র বেদমন্ত্র উচ্চারণের মাধ্যমে
+                আগামী <strong>২৬শে অগ্রহায়ণ, ১৪৩৩</strong>
+                (ইং ১৩ ডিসেম্বর, ২০২৬) রবিবার আমাদের পুত্র
+                <strong>আবিরের</strong> সঙ্গে
+                গোয়ালা,টেকেরহাট নিবাসী স্বর্গীয় শেখর সাহা ও
+                শ্রীমতী জলী সাহা মহাশয়ার কনিষ্ঠ কন্যা
+                <strong>নদীর</strong> শুভ বিবাহ সুসম্পন্ন হবে।
+            </p>
+
+
+            <!-- SECOND PARAGRAPH -->
+
+            <p>
+                এই শুভ উপলক্ষ্যে আগামী
+                <strong>৩০ অগ্রহায়ণ, ১৪৩৩</strong>
+                (ইং ১৬ ডিসেম্বর, ২০২৬) বুধবার দুপুরে
+                <strong>"ইউনাইটেড ক্লাব, খুলনা"</strong>-এ আয়োজিত
+                প্রীতিভোজ অনুষ্ঠানে আপনি/আপনারা উপস্থিত থেকে
+                নবদম্পতিকে আশীর্বাদ করবেন—
+                একান্তভাবে এই কামনা করছি।
+            </p>
+
+
+            <!-- THIRD PARAGRAPH -->
+
+            <p>
+                পত্রদ্বারা নিমন্ত্রণের ত্রুটি মার্জনীয়।
+            </p>
+
+
+            <!-- =================================================
+                 FAMILY
+            ================================================= -->
+
+            <div class="family">
+
+                <span>
+                    বিনীত/বিনীতা
+                </span>
+
+                <strong>
+                    প্রদীপ কুমার সাহা
+                </strong>
+
+                <span>
+                    ও
+                </span>
+
+                <strong>
+                    গীতা রানী সাহা
+                </strong>
+
+            </div>
+
+
         </div>
-
-      </div>
 
     </div>
 
-  </main>
+
+    <!-- =====================================================
+         JAVASCRIPT
+    ===================================================== -->
+
+    <script>
+
+        const backButton =
+            document.getElementById("backButton");
+
+
+        backButton.addEventListener("click", function () {
+
+            console.log("Going back to index.html");
+
+        });
+
+    </script>
+
 
 </body>
+
 </html>
