@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+<title>নিমন্ত্রণ</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #4a0a0a;
+}
+
+
+/* =========================
+   STAGE
+========================= */
+
+.stage {
+    position: relative;
+
+    width: 100vw;
+    height: 100vh;
+
+    max-width: 480px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    background: #4a0a0a;
+
+    box-shadow: 0 0 60px rgba(0,0,0,0.8);
+}
+
+
+/* =========================
+   BACKGROUND
+========================= */
+
+.bg-img {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%) scale(1.06);
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+    object-position: center center;
+
+    z-index: 1;
+
+    pointer-events: none;
+}
+
+
+/* Vignette */
+
+.stage::after {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        radial-gradient(
+            ellipse at center,
+            transparent 60%,
+            rgba(0,0,0,0.35) 100%
+        );
+
+    pointer-events: none;
+
+    z-index: 2;
+}
+
+
+/* =========================
+   ALPONA
+========================= */
+
+.alpona-wrap {
+
+    position: absolute;
+
+    top: 42%;
+    left: 50%;
+
+    width: 78vw;
+    max-width: 340px;
+
+    height: 78vw;
+    max-height: 340px;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0);
+
+    opacity: 0;
+
+    z-index: 3;
+
+    animation:
+        alponaIn
+        1.6s cubic-bezier(0.22,1,0.36,1)
+        0.3s forwards;
+}
+
+
+@keyframes alponaIn {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.3);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+    }
+}
+
+
+.alpona {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    filter:
+        drop-shadow(
+            0 0 18px
+            rgba(255,220,120,0.75)
+        )
+        drop-shadow(
+            0 0 40px
+            rgba(255,160,40,0.45)
+        );
+
+    animation:
+        spin
+        30s
+        linear
+        infinite;
+
+    transform-origin: center center;
+}
+
+
+@keyframes spin {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* =========================
+   ENVELOPE
+========================= */
+
+.envelope-wrap {
+
+    position: absolute;
+
+    top: 42%;
+    left: 50%;
+
+    width: 46vw;
+    max-width: 210px;
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.2);
+
+    opacity: 0;
+
+    z-index: 6;
+
+    cursor: pointer;
+
+    transition: transform 0.25s ease;
+}
+
+
+.envelope-wrap.enter {
+
+    animation:
+        envelopeIn
+        1.2s
+        cubic-bezier(0.34,1.56,0.64,1)
+        1.5s
+        forwards,
+
+        floatY
+        3.5s
+        ease-in-out
+        3s
+        infinite;
+}
+/* =========================
+   INVITATION TEXT
+========================= */
+
+.invitation-text {
+    position: absolute;
+
+    top: 25%;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: 90%;
+
+    text-align: center;
+
+    color:  #fff4d0;
+
+    font-family: "Noto Serif Bengali", serif;
+
+    font-size: 20px;
+
+    font-weight: 700;
+
+    line-height: 1.6;
+
+    text-shadow:
+        0 2px 5px rgba(0,0,0,0.7),
+        0 0 10px rgba(16, 15, 13, 0);
+
+    z-index: 7;
+
+    cursor: pointer;
+
+    animation:
+        textGlow 2s ease-in-out infinite alternate;
+}
+
+
+@keyframes textGlow {
+
+    from {
+        opacity: 0.85;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes envelopeIn {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translate(-50%, -50%)
+            scale(0.2)
+            rotate(-12deg);
+    }
+
+    70% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1.08)
+            rotate(3deg);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translate(-50%, -50%)
+            scale(1)
+            rotate(0deg);
+    }
+}
+
+
+@keyframes floatY {
+
+    0%,
+    100% {
+        transform:
+            translate(-50%, -50%)
+            translateY(0);
+    }
+
+    50% {
+        transform:
+            translate(-50%, -50%)
+            translateY(-6px);
+    }
+}
+
+
+.envelope-wrap:active {
+
+    transform:
+        translate(-50%, -50%)
+        scale(0.94) !important;
+}
+
+
+.envelope-img {
+
+    width: 100%;
+
+    display: block;
+
+    filter:
+        drop-shadow(
+            0 12px 25px
+            rgba(0,0,0,0.6)
+        );
+}
+
+
+/* =========================
+   PEACOCKS
+========================= */
+
+/* =========================
+   PEACOCK COMMON
+========================= */
+
+.peacock {
+    position: absolute;
+
+    bottom: -10px;
+
+    height: 42vh;
+    max-height: 330px;
+
+    width: auto;
+
+    z-index: 5;
+
+    opacity: 0;
+
+    filter: drop-shadow(
+        0 8px 18px rgba(0,0,0,0.7)
+    );
+
+    pointer-events: none;
+}
+
+
+/* =========================
+   LEFT PEACOCK
+========================= */
+
+.peacock.left {
+
+    left: 5px;
+    right: auto;
+
+    transform-origin: bottom left;
+
+    animation:
+        peacockLeftIn
+        1.6s
+        cubic-bezier(0.34,1.56,0.64,1)
+        0.3s
+        forwards;
+}
+
+
+@keyframes peacockLeftIn {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateX(-100px)
+            scale(0.6);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateX(0)
+            scale(1);
+    }
+}
+
+
+/* =========================
+   RIGHT PEACOCK
+========================= */
+
+.peacock.right {
+
+    right: 5px;
+    left: auto;
+
+    transform-origin: bottom right;
+
+    animation:
+        peacockRightIn
+        1.6s
+        cubic-bezier(0.34,1.56,0.64,1)
+        0.3s
+        forwards;
+}
+
+
+@keyframes peacockRightIn {
+
+    0% {
+        opacity: 0;
+
+        transform:
+            translateX(100px)
+            scaleX(-1)
+            scale(0.6);
+    }
+
+    100% {
+        opacity: 1;
+
+        transform:
+            translateX(0)
+            scaleX(-1)
+            scale(1);
+    }
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .peacock {
+
+        height: 42vh;
+        max-height: 330px;
+    }
+
+
+    /* LEFT */
+
+    .peacock.left {
+
+        left: 5px;
+        right: auto;
+    }
+
+
+    /* RIGHT */
+
+    .peacock.right {
+
+        right: 140px;
+        left: auto;
+    }
+
+}
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    /* Alpona */
+
+    .alpona-wrap {
+
+        top: 42%;
+
+        width: 78vw;
+        height: 78vw;
+    }
+
+
+    /* Envelope */
+
+    .envelope-wrap {
+
+        top: 42%;
+
+        width: 46vw;
+    }
+.invitation-text {
+
+    top: 35%;
+
+    width: 92%;
+
+    font-size: 16px;
+
+    line-height: 1.5;
+}
+
+    /* Both peacocks small */
+}
+
+</style>
+</head>
+
+
+<body>
+
+<div class="stage" id="stage">
+
+
+    <!-- Background -->
+
+    <img
+        src="30.png"
+        alt=""
+        class="bg-img"
+    >
+
+
+    <!-- Rotating Alpona -->
+
+    <div class="alpona-wrap">
+
+        <img
+            src="4.png"
+            alt="alpona"
+            class="alpona"
+        >
+
+    </div>
+
+<div
+    class="invitation-text"
+    id="invitationText"
+>
+    ভালোবাসা অঙ্গীকারে<br>
+    আপনার নিমন্ত্রণ
+</div>
+    <!-- Envelope -->
+
+    <div
+        class="envelope-wrap enter"
+        id="envelope"
+    >
+
+        <img
+            src="31.png"
+            alt="envelope"
+            class="envelope-img"
+        >
+
+    </div>
+
+
+    <!-- LEFT PEACOCK -->
+
+    <img
+        src="11.png"
+        alt="peacock"
+        class="peacock left"
+    >
+
+
+    <!-- RIGHT PEACOCK
+         কিন্তু এখন LEFT SIDE-এ -->
+
+    <img
+        src="11.png"
+        alt="peacock"
+        class="peacock right"
+    >
+
+
+</div>
+
+
+<script>
+
+const envelope =
+    document.getElementById('envelope');
+
+const stage =
+    document.getElementById('stage');
+
+const invitationText =
+    document.getElementById('invitationText');
+
+
+
+/* =========================
+   ENVELOPE CLICK
+========================= */
+
+envelope.addEventListener('click', function(e) {
+
+    const rect =
+        stage.getBoundingClientRect();
+
+    const x =
+        e.clientX - rect.left;
+
+    const y =
+        e.clientY - rect.top;
+
+
+    /* Ripple */
+
+    const rip =
+        document.createElement('div');
+
+    rip.className = 'ripple';
+
+    rip.style.left = x + 'px';
+
+    rip.style.top = y + 'px';
+
+    stage.appendChild(rip);
+
+
+    setTimeout(() => {
+
+        rip.remove();
+
+    }, 800);
+
+
+
+    /* Envelope animation */
+
+    envelope.style.animation = 'none';
+
+    envelope.style.transition =
+        'transform 0.85s cubic-bezier(0.34,1.56,0.64,1), opacity 0.85s ease';
+
+
+    requestAnimationFrame(() => {
+
+        envelope.style.transform =
+            'translate(-50%, -50%) scale(1.7)';
+
+        envelope.style.opacity = '0';
+
+    });
+
+
+    /* Go to index3.html */
+
+    setTimeout(() => {
+
+        window.location.href =
+            'index6.html';
+
+    }, 900);
+
+});
+
+
+
+/* =========================
+   TEXT CLICK
+========================= */
+
+invitationText.addEventListener('click', function() {
+
+    window.location.href =
+        'index6.html';
+
+});
+
+</script>
+
+</body>
+</html>

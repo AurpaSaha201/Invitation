@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Wedding Invitation</title>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Serif Bengali", serif;
+  background: #f7efd9;
+}
+
+/* =========================
+   MAIN PAGE
+========================= */
+
+.invitation-page {
+  width: 100%;
+  min-height: 100vh;
+
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 20px;
+}
+
+/* =========================
+   INVITATION CARD
+========================= */
+
+.invitation-card {
+  position: relative;
+
+  width: 600px;
+
+  overflow: hidden;
+
+  box-shadow: 0 5px 25px rgba(0, 0, 0, 0.12);
+}
+
+/* Background Image */
+
+.invitation-bg {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: contain;
+}
+
+/* =========================
+   TEXT CONTENT
+========================= */
+
+.invitation-content {
+  position: absolute;
+
+  top: 27%;
+  left: 50%;
+
+  transform: translateX(-50%);
+
+  width: 70%;
+
+  text-align: center;
+
+  color: #513b32;
+}
+
+/* Heading */
+
+.invitation-content h2 {
+  font-size: 22px;
+  font-weight: 700;
+
+  margin-bottom: 12px;
+
+  color: #633b2e;
+}
+
+.invitation-content h3 {
+  font-size: 18px;
+  font-weight: 600;
+
+  margin-bottom: 18px;
+
+  color: #765043;
+}
+
+/* Paragraph */
+
+.invitation-content p {
+  font-size: 14px;
+  line-height: 1.8;
+
+  text-align: justify;
+
+  margin-bottom: 13px;
+}
+
+.invitation-content strong {
+  color: #633b2e;
+}
+
+/* Family */
+
+.family {
+  margin-top: 20px;
+
+  display: flex;
+  flex-direction: column;
+
+  align-items: center;
+
+  gap: 2px;
+}
+
+.family span {
+  font-size: 13px;
+}
+
+.family strong {
+  font-size: 16px;
+  color: #633b2e;
+}
+
+
+/* =====================================
+   LARGE LAPTOP
+   1200px+
+===================================== */
+
+@media (min-width: 1200px) {
+
+  .invitation-page {
+    padding: 20px;
+  }
+
+  .invitation-card {
+    width: 650px;
+  }
+
+  .invitation-content {
+    width: 70%;
+    top: 27%;
+  }
+
+  .invitation-content h2 {
+    font-size: 24px;
+  }
+
+  .invitation-content h3 {
+    font-size: 20px;
+  }
+
+  .invitation-content p {
+    font-size: 15px;
+    line-height: 1.9;
+  }
+}
+
+
+/* =====================================
+   LAPTOP
+   992px - 1199px
+===================================== */
+
+@media (min-width: 992px) and (max-width: 1199px) {
+
+  .invitation-card {
+    width: 600px;
+  }
+
+  .invitation-content {
+    width: 70%;
+    top: 27%;
+  }
+
+  .invitation-content h2 {
+    font-size: 22px;
+  }
+
+  .invitation-content h3 {
+    font-size: 18px;
+  }
+
+  .invitation-content p {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+}
+
+
+/* =====================================
+   TABLET
+   768px - 991px
+===================================== */
+
+@media (min-width: 768px) and (max-width: 991px) {
+
+  .invitation-page {
+    padding: 15px;
+  }
+
+  .invitation-card {
+    width: 560px;
+  }
+
+  .invitation-content {
+    width: 68%;
+    top: 27%;
+  }
+
+  .invitation-content h2 {
+    font-size: 20px;
+  }
+
+  .invitation-content h3 {
+    font-size: 17px;
+  }
+
+  .invitation-content p {
+    font-size: 12px;
+    line-height: 1.75;
+  }
+
+  .family span {
+    font-size: 11px;
+  }
+
+  .family strong {
+    font-size: 14px;
+  }
+}
+
+
+/* =====================================
+   PHONE
+   481px - 767px
+===================================== */
+
+@media (min-width: 481px) and (max-width: 767px) {
+
+  .invitation-page {
+    padding: 0;
+  }
+
+  .invitation-card {
+    width: 100%;
+    max-width: 600px;
+
+    box-shadow: none;
+  }
+
+  .invitation-content {
+    width: 68%;
+
+    top: 27%;
+  }
+
+  .invitation-content h2 {
+    font-size: 17px;
+
+    margin-bottom: 8px;
+  }
+
+  .invitation-content h3 {
+    font-size: 15px;
+
+    margin-bottom: 10px;
+  }
+
+  .invitation-content p {
+    font-size: 10px;
+    line-height: 1.65;
+
+    margin-bottom: 8px;
+  }
+
+  .family {
+    margin-top: 12px;
+  }
+
+  .family span {
+    font-size: 9px;
+  }
+
+  .family strong {
+    font-size: 12px;
+  }
+}
+
+
+/* =====================================
+   SMALL PHONE
+   320px - 480px
+===================================== */
+
+@media (max-width: 480px) {
+
+  body {
+    background: #f7efd9;
+  }
+
+  .invitation-page {
+    padding: 0;
+  }
+
+  .invitation-card {
+    width: 100%;
+
+    box-shadow: none;
+  }
+
+  .invitation-bg {
+    width: 100%;
+    height: auto;
+  }
+
+  .invitation-content {
+
+    /* Text area */
+    width: 66%;
+
+    top: 27%;
+
+    left: 50%;
+  }
+
+  .invitation-content h2 {
+    font-size: 14px;
+
+    margin-bottom: 6px;
+  }
+
+  .invitation-content h3 {
+    font-size: 12px;
+
+    margin-bottom: 8px;
+  }
+
+  .invitation-content p {
+    font-size: 8px;
+
+    line-height: 1.55;
+
+    margin-bottom: 6px;
+  }
+
+  .family {
+    margin-top: 8px;
+
+    gap: 0;
+  }
+
+  .family span {
+    font-size: 7px;
+  }
+
+  .family strong {
+    font-size: 9px;
+  }
+}
+/* =========================
+   BACK BUTTON
+========================= */
+
+.back-button {
+  position: fixed;
+
+  top: 15px;
+  right: 15px;
+
+  z-index: 1000;
+
+  padding: 8px 16px;
+
+  border: 2px solid #d6a72b;
+  border-radius: 30px;
+
+  background: rgba(99, 59, 46, 0.9);
+
+  color: #fff5dc;
+
+  font-family: "Noto Serif Bengali", serif;
+  font-size: 14px;
+  font-weight: 600;
+
+  text-decoration: none;
+
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+
+  transition: 0.3s ease;
+}
+
+.back-button:hover {
+  background: #633b2e;
+  transform: translateY(-2px);
+}
+
+
+/* =========================
+   BACK BUTTON - MOBILE
+========================= */
+
+@media (max-width: 480px) {
+
+  .back-button {
+    top: 10px;
+    right: 10px;
+
+    padding: 6px 11px;
+
+    font-size: 11px;
+
+    border-width: 1.5px;
+  }
+}
+  </style>
+</head>
+
+<body>
+ <a href="index6.html" class="back-button">
+    ← 
+  </a>
+  <main class="invitation-page">
+
+    <div class="invitation-card">
+
+      <!-- Background Image -->
+      <img
+        src="60.jpg"
+        alt="Wedding Invitation"
+        class="invitation-bg"
+      />
+
+      <!-- Content -->
+      <div class="invitation-content">
+
+        <h2>শ্রীশ্রী প্রজাপতয়ে নমঃ</h2>
+
+        <h3>সবিনয়ে নিবেদন</h3>
+
+        <p>
+          মহাশয়/মহাশয়া,
+        </p>
+
+        <p>
+          প্রজাপতি ঋষির আশীর্বাদে ও পবিত্র বেদমন্ত্র উচ্চারণের মাধ্যমে
+          আগামী <strong>২৬শে অগ্রহায়ণ, ১৪৩৩</strong> (ইং ১৩ ডিসেম্বর, ২০২৬) রবিবার
+          আমাদের পুত্র <strong>আবিরের</strong> সঙ্গে
+          গোয়ালা,টেকেরহাট নিবাসী স্বর্গীয় শেখর সাহা ও শ্রীমতী জলী সাহা মহাশয়ার
+          কনিষ্ঠ কন্যা <strong>নদীর</strong> শুভ বিবাহ সুসম্পন্ন হবে।
+        </p>
+
+        <p>
+          এই শুভ উপলক্ষ্যে আগামী <strong>৩০ অগ্রহায়ণ , ১৪৩৩</strong>
+          (ইং ১৬ ডিসেম্বর, ২০২৬) বুধবার দুপুরে
+          <strong>"ইউনাইটেড ক্লাব,খুলনা"</strong>-এ আয়োজিত
+          প্রীতিভোজ অনুষ্ঠানে আপনি/আপনারা উপস্থিত থেকে
+          নবদম্পতিকে আশীর্বাদ করবেন—
+          একান্তভাবে এই কামনা করছি।
+        </p>
+
+        <p>
+          পত্রদ্বারা নিমন্ত্রণের ত্রুটি মার্জনীয়।
+        </p>
+
+        <div class="family">
+          <span>বিনীত/বিনীতা</span>
+          <strong>প্রদীপ কুমার সাহা</strong>
+          <span>ও</span>
+          <strong>গীতা রানী সাহা</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </main>
+
+</body>
+</html>

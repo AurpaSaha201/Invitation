@@ -1,0 +1,1595 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>আমাদের বিবাহের নিমন্ত্রণ</title>
+
+  <!-- Bengali Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Galada&family=Noto+Serif+Bengali:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <style>
+
+    /* =========================
+       RESET
+    ========================== */
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      width: 100%;
+      min-height: 100vh;
+      background: #f7efd9;
+      font-family: "Noto Serif Bengali", serif;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+
+
+    /* =========================
+       FIRST PAGE
+    ========================== */
+
+    .wedding-section {
+      position: relative;
+      width: 100%;
+      max-width: 620px;
+      min-height: 100vh;
+      margin: 0 auto;
+
+      background-image: url("14.jpg");
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+
+      overflow: hidden;
+    }
+
+
+    .first-page {
+      min-height: 100vh;
+    }
+
+
+    /* =========================
+       SCROLL
+    ========================== */
+
+    .scroll-wrapper {
+      position: absolute;
+
+      width: min(88%, 520px);
+
+      top: 48%;
+      right: 2%;
+
+      transform: translateY(-50%);
+    }
+
+    .scroll-image {
+      display: block;
+
+      width: 100%;
+      height: auto;
+
+      object-fit: contain;
+    }
+
+
+    /* =========================
+       TEXT ON SCROLL
+    ========================== */
+
+    .scroll-content {
+      position: absolute;
+
+      top: 50%;
+      left: 50%;
+
+      width: 70%;
+
+      transform: translate(-50%, -50%);
+
+      text-align: center;
+
+      pointer-events: none;
+    }
+
+    .scroll-content h1 {
+      color: #8d201b;
+
+      font-size: clamp(28px, 5vw, 48px);
+
+      font-weight: 700;
+
+      white-space: nowrap;
+    }
+
+
+    /* =========================
+       DECORATIVE LINE
+    ========================== */
+
+    .decor-line {
+      display: flex;
+
+      justify-content: center;
+      align-items: center;
+
+      gap: 6px;
+
+      margin-top: 8px;
+    }
+
+    .decor-line span {
+      width: 55px;
+      height: 1px;
+
+      background: #9b362d;
+    }
+
+    .decor-line i {
+      width: 8px;
+      height: 8px;
+
+      background: #9b362d;
+
+      transform: rotate(45deg);
+
+      display: block;
+    }
+
+
+    /* =========================
+       INTRO BUTTON
+    ========================== */
+
+    .intro-button {
+      position: absolute;
+
+      top: calc(48% + 190px);
+      right: 50%;
+
+      transform: translateX(50%);
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 10px;
+
+      min-width: 260px;
+
+      padding: 13px 25px;
+
+      border: 2px solid #f4d65d;
+      border-radius: 40px;
+
+      background: #8d111d;
+
+      color: white;
+
+      font-family: "Noto Serif Bengali", serif;
+      font-size: 18px;
+      font-weight: 700;
+
+      text-decoration: none;
+
+      cursor: pointer;
+
+      transition: 0.3s ease;
+
+      z-index: 20;
+    }
+
+    .intro-button strong {
+      font-size: 22px;
+    }
+
+    .intro-button:hover {
+      transform: translateX(50%) scale(1.03);
+    }
+
+
+    /* =========================
+       SECOND PAGE
+    ========================== */
+
+    .wedding-page {
+      position: relative;
+
+      width: 100%;
+      max-width: 600px;
+
+      min-height: 100vh;
+
+      margin: 0 auto;
+
+      overflow: hidden;
+
+      background: #4a0000;
+    }
+
+
+    /* =========================
+       BACKGROUND
+    ========================== */
+
+    .background {
+      position: absolute;
+
+      inset: 0;
+
+      width: 100%;
+      height: 100%;
+
+      object-fit: cover;
+      object-position: center;
+
+      z-index: 1;
+
+      pointer-events: none;
+    }
+
+
+    /* =========================
+       DARK OVERLAY
+    ========================== */
+
+    .wedding-page::after {
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background:
+        linear-gradient(
+          to bottom,
+          rgba(50, 0, 0, 0.03),
+          rgba(70, 0, 0, 0.12)
+        );
+
+      z-index: 2;
+
+      pointer-events: none;
+    }
+
+
+    /* =========================
+       TOP CURTAIN
+    ========================== */
+
+    .top-curtain {
+      position: absolute;
+
+      top: 0;
+      left: 0;
+
+      width: 100%;
+
+      z-index: 5;
+
+      pointer-events: none;
+    }
+
+    .curtain {
+      width: 100%;
+      height: auto;
+
+      display: block;
+    }
+
+
+    /* =========================
+       COUNTDOWN
+    ========================== */
+
+    .countdown-section {
+      position: absolute;
+
+      top: 17%;
+      left: 50%;
+
+      transform: translateX(-50%);
+
+      width: 88%;
+
+      z-index: 10;
+
+      text-align: center;
+    }
+
+
+    /* DATE */
+
+    .date-box {
+      width: 65%;
+
+      margin: auto;
+
+      padding: 8px 20px;
+
+      border-top: 2px solid #d5a62a;
+      border-bottom: 2px solid #d5a62a;
+
+      color: #fff1c7;
+
+      font-size: 22px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 12px;
+
+      background: rgba(65, 0, 0, 0.70);
+
+      box-shadow:
+        0 0 10px rgba(0, 0, 0, 0.25);
+    }
+
+    .calendar-icon {
+      font-size: 20px;
+      color: #e8bd46;
+    }
+
+
+    /* COUNTDOWN BOXES */
+
+    .countdown {
+      margin-top: 10px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 7px;
+
+      padding: 8px;
+
+      border-top: 1px solid #bd8c1d;
+      border-bottom: 1px solid #bd8c1d;
+    }
+
+    .time-box {
+      width: 120px;
+      height: 90px;
+
+      border: 2px solid #c99a25;
+
+      border-radius: 16px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      align-items: center;
+      justify-content: center;
+
+      background: rgba(55, 0, 0, 0.65);
+
+      box-shadow:
+        inset 0 0 15px rgba(200, 150, 30, 0.08);
+    }
+
+    .number {
+      font-family: Georgia, serif;
+
+      font-size: 38px;
+      font-weight: 700;
+
+      line-height: 1;
+
+      color: #fff3cf;
+    }
+
+    .label {
+      margin-top: 6px;
+
+      font-family: Georgia, serif;
+
+      font-size: 17px;
+
+      color: #fff1d0;
+    }
+
+    .divider {
+      color: #d9a82c;
+
+      font-size: 18px;
+    }
+
+
+    /* =========================
+       INVITATION BUTTON
+    ========================== */
+
+    .invitation-button {
+      position: absolute;
+
+      top: 40%;
+      right: 5%;
+
+      z-index: 12;
+
+      width: 280px;
+
+      padding: 11px 18px;
+
+      border: 2px solid #d6a72b;
+      border-radius: 45px;
+
+      background: rgba(55, 0, 0, 0.72);
+
+      color: #fff0c8;
+
+      text-decoration: none;
+
+      font-size: 20px;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      gap: 12px;
+
+      transition: all 0.3s ease;
+    }
+
+    .invitation-button:hover {
+      background: #700808;
+
+      transform: translateY(-3px);
+
+      box-shadow:
+        0 7px 25px rgba(0, 0, 0, 0.4);
+    }
+
+    .envelope-icon {
+      font-size: 23px;
+    }
+
+    .arrow {
+      font-size: 28px;
+
+      line-height: 1;
+    }
+
+
+    /* =========================
+       LOCATION CARD
+    ========================== */
+
+    .location-card {
+      position: absolute;
+
+      top: 40%;
+      left: 5%;
+
+      width: 320px;
+
+      padding: 10px;
+
+      border: 1px solid #d7aa43;
+      border-radius: 18px;
+
+      background: rgba(255, 255, 255, 0.92);
+
+      z-index: 10;
+
+      box-shadow:
+        0 12px 30px rgba(0, 0, 0, 0.35);
+    }
+
+
+    .location-title {
+      display: flex;
+
+      align-items: center;
+
+      gap: 12px;
+
+      padding: 5px;
+
+      width: 100%;
+    }
+
+    .location-icon {
+      width: 45px;
+      height: 45px;
+
+      min-width: 45px;
+
+      border-radius: 50%;
+
+      background: #6d0710;
+
+      color: white;
+
+      display: flex;
+
+      align-items: center;
+      justify-content: center;
+
+      font-size: 21px;
+    }
+
+    .location-title small {
+      display: block;
+
+      color: #70201d;
+
+      font-family: Georgia, serif;
+
+      font-size: 14px;
+    }
+
+    .location-title h2 {
+      color: #6a1715;
+
+      font-family: Georgia, serif;
+
+      font-size: 22px;
+
+      margin-top: 2px;
+    }
+
+
+    /* =========================
+       GOOGLE MAP
+    ========================== */
+
+    .map-container {
+      width: 100%;
+
+      height: 220px;
+
+      overflow: hidden;
+
+      border-radius: 10px;
+
+      margin-top: 4px;
+    }
+
+    .map-container iframe {
+      width: 100%;
+      height: 100%;
+
+      display: block;
+
+      border: 0;
+    }
+
+
+    /* =========================
+       BOTTOM FLOWERS
+    ========================== */
+
+    .bottom-decoration {
+      position: absolute;
+
+      bottom: 0;
+      left: 0;
+
+      width: 100%;
+      height: 150px;
+
+      z-index: 7;
+
+      pointer-events: none;
+    }
+
+    .flower {
+      position: absolute;
+
+      bottom: 20px;
+
+      font-size: 60px;
+
+      color: #d9a72c;
+
+      text-shadow:
+        0 0 10px rgba(255, 200, 60, 0.5);
+    }
+
+    .flower-left {
+      left: 4%;
+    }
+
+    .flower-right {
+      right: 4%;
+    }
+
+
+    /* =================================================
+       TABLET
+       601px - 900px
+    ================================================= */
+
+    @media (min-width: 601px) and (max-width: 900px) {
+
+      .wedding-section {
+        max-width: 600px;
+      }
+
+      .wedding-page {
+        max-width: 600px;
+      }
+
+
+      /* FIRST PAGE */
+
+      .scroll-wrapper {
+        width: 88%;
+
+        max-width: 530px;
+
+        top: 47%;
+        right: 1%;
+      }
+
+      .scroll-content {
+        width: 70%;
+      }
+
+      .scroll-content h1 {
+        font-size: clamp(25px, 6vw, 40px);
+      }
+
+      .decor-line span {
+        width: 45px;
+      }
+
+      .intro-button {
+        top: calc(47% + 175px);
+
+        min-width: 235px;
+
+        padding: 11px 22px;
+
+        font-size: 17px;
+      }
+
+
+      /* SECOND PAGE */
+
+      .countdown-section {
+        top: 17%;
+        width: 90%;
+      }
+
+      .date-box {
+        width: 65%;
+
+        padding: 8px 15px;
+
+        font-size: 20px;
+      }
+
+      .countdown {
+        gap: 5px;
+
+        padding: 7px;
+      }
+
+      .time-box {
+        width: 105px;
+        height: 82px;
+      }
+
+      .number {
+        font-size: 34px;
+      }
+
+      .label {
+        font-size: 15px;
+      }
+
+      .divider {
+        font-size: 15px;
+      }
+
+      .invitation-button {
+        top: 31%;
+        right: 4%;
+
+        width: 250px;
+
+        font-size: 18px;
+      }
+
+      .location-card {
+        top: 40%;
+        left: 4%;
+
+        width: 330px;
+
+        padding: 8px;
+      }
+
+      .location-title {
+        gap: 10px;
+      }
+
+      .location-icon {
+        width: 42px;
+        height: 42px;
+
+        min-width: 42px;
+      }
+
+      .location-title h2 {
+        font-size: 20px;
+      }
+
+      .location-title small {
+        font-size: 13px;
+      }
+
+      .map-container {
+        height: 200px;
+      }
+    }
+
+
+    /* =================================================
+       MOBILE
+       401px - 600px
+    ================================================= */
+
+    @media (min-width: 401px) and (max-width: 600px) {
+
+      body {
+        background: #4a0000;
+      }
+
+      .wedding-section,
+      .wedding-page {
+        width: 100%;
+        max-width: 480px;
+
+        min-height: 100svh;
+      }
+
+
+      /* FIRST PAGE */
+
+      .scroll-wrapper {
+        width: 72%;
+
+        right: 1%;
+
+        top: 44%;
+      }
+
+      .scroll-content {
+        width: 67%;
+      }
+
+      .scroll-content h1 {
+        font-size: clamp(22px, 7vw, 32px);
+      }
+
+      .decor-line {
+        margin-top: 5px;
+      }
+
+      .decor-line span {
+        width: 30px;
+      }
+
+      .decor-line i {
+        width: 6px;
+        height: 6px;
+      }
+
+      .intro-button {
+        top: calc(44% + 115px);
+
+        right: 30%;
+
+        min-width: 205px;
+
+        padding: 10px 17px;
+
+        font-size: 15px;
+
+        gap: 7px;
+      }
+
+      .intro-button strong {
+        font-size: 18px;
+      }
+
+
+      /* SECOND PAGE */
+
+      .countdown-section {
+        top: 18%;
+
+        width: 94%;
+      }
+
+      .date-box {
+        width: 80%;
+
+        padding: 7px 10px;
+
+        font-size: 15px;
+
+        gap: 7px;
+      }
+
+      .calendar-icon {
+        font-size: 15px;
+      }
+
+      .countdown {
+        gap: 3px;
+
+        padding: 5px 1px;
+      }
+
+      .time-box {
+        width: 22vw;
+
+        max-width: 95px;
+
+        height: 65px;
+
+        border-radius: 10px;
+
+        border-width: 1.5px;
+      }
+
+      .number {
+        font-size: 23px;
+      }
+
+      .label {
+        font-size: 10px;
+
+        margin-top: 4px;
+      }
+
+      .divider {
+        font-size: 9px;
+      }
+
+      .invitation-button {
+        top: 35%;
+
+        right: 4%;
+
+        width: 58%;
+
+        padding: 7px 8px;
+
+        font-size: 14px;
+
+        gap: 6px;
+
+        border-width: 1.5px;
+      }
+
+      .envelope-icon {
+        font-size: 17px;
+      }
+
+      .arrow {
+        font-size: 20px;
+      }
+
+      .location-card {
+        top: 40%;
+
+        left: 4%;
+
+        width: 60%;
+
+        padding: 6px;
+
+        border-radius: 12px;
+      }
+
+      .location-title {
+        gap: 8px;
+
+        padding: 5px;
+      }
+
+      .location-icon {
+        width: 34px;
+        height: 34px;
+
+        min-width: 34px;
+
+        font-size: 15px;
+      }
+
+      .location-title small {
+        font-size: 10px;
+      }
+
+      .location-title h2 {
+        font-size: 16px;
+      }
+
+      .map-container {
+        height: 160px;
+
+        border-radius: 8px;
+      }
+
+      .bottom-decoration {
+        height: 100px;
+      }
+
+      .flower {
+        font-size: 40px;
+
+        bottom: 12px;
+      }
+    }
+
+
+    /* =================================================
+       SMALL PHONE
+       400px AND BELOW
+    ================================================= */
+
+    @media (max-width: 400px) {
+
+      body {
+        background: #4a0000;
+      }
+
+      .wedding-section,
+      .wedding-page {
+        width: 100%;
+        max-width: 400px;
+
+        min-height: 100svh;
+      }
+
+
+      /* FIRST PAGE */
+
+      .scroll-wrapper {
+        width: 88%;
+
+        right: 1.5%;
+
+        top: 43%;
+      }
+
+      .scroll-content {
+        width: 65%;
+      }
+
+      .scroll-content h1 {
+        font-size: 20px;
+      }
+
+      .decor-line {
+        margin-top: 4px;
+      }
+
+      .decor-line span {
+        width: 25px;
+      }
+
+      .decor-line i {
+        width: 6px;
+        height: 6px;
+      }
+
+      .intro-button {
+        top: calc(43% + 120px);
+
+        right: 30%;
+
+        min-width: 185px;
+
+        padding: 8px 14px;
+
+        font-size: 14px;
+      }
+
+      .intro-button strong {
+        font-size: 17px;
+      }
+
+
+      /* SECOND PAGE */
+
+      .countdown-section {
+        top: 17%;
+
+        width: 96%;
+      }
+
+      .date-box {
+        width: 82%;
+
+        padding: 6px 8px;
+
+        font-size: 13px;
+
+        gap: 5px;
+      }
+
+      .calendar-icon {
+        font-size: 13px;
+      }
+
+      .countdown {
+        gap: 2px;
+
+        padding: 4px 0;
+      }
+
+      .time-box {
+        width: 21vw;
+
+        max-width: 82px;
+
+        height: 58px;
+
+        border-radius: 8px;
+
+        border-width: 1px;
+      }
+
+      .number {
+        font-size: 20px;
+      }
+
+      .label {
+        font-size: 9px;
+
+        margin-top: 3px;
+      }
+
+      .divider {
+        font-size: 8px;
+      }
+
+      .invitation-button {
+        top: 36%;
+
+        right: 4%;
+
+        width: 62%;
+
+        font-size: 12px;
+
+        padding: 6px;
+
+        gap: 4px;
+      }
+
+      .envelope-icon {
+        font-size: 15px;
+      }
+
+      .arrow {
+        font-size: 18px;
+      }
+
+      .location-card {
+        top: 48%;
+
+        left: 4%;
+
+        width: 92%;
+
+        padding: 6px;
+      }
+
+      .location-title {
+        gap: 7px;
+
+        padding: 4px;
+      }
+
+      .location-icon {
+        width: 32px;
+        height: 32px;
+
+        min-width: 32px;
+
+        font-size: 14px;
+      }
+
+      .location-title small {
+        font-size: 9px;
+      }
+
+      .location-title h2 {
+        font-size: 15px;
+      }
+
+      .map-container {
+        height: 145px;
+
+        border-radius: 7px;
+      }
+
+      .bottom-decoration {
+        height: 90px;
+      }
+
+      .flower {
+        font-size: 35px;
+
+        bottom: 10px;
+      }
+    }
+
+
+    /* =================================================
+       VERY SMALL PHONE
+       360px AND BELOW
+    ================================================= */
+
+    @media (max-width: 360px) {
+
+      /* FIRST PAGE */
+
+      .scroll-wrapper {
+        width: 92%;
+
+        right: 1%;
+
+        top: 42%;
+      }
+
+      .scroll-content h1 {
+        font-size: 18px;
+      }
+
+      .intro-button {
+        top: calc(42% + 115px);
+
+        right: 28%;
+
+        min-width: 170px;
+
+        padding: 7px 12px;
+
+        font-size: 13px;
+      }
+
+
+      /* SECOND PAGE */
+
+      .countdown-section {
+        top: 16%;
+      }
+
+      .date-box {
+        width: 86%;
+
+        font-size: 12px;
+      }
+
+      .time-box {
+        width: 20vw;
+
+        height: 55px;
+      }
+
+      .number {
+        font-size: 18px;
+      }
+
+      .label {
+        font-size: 8px;
+      }
+
+      .invitation-button {
+        top: 35%;
+
+        width: 65%;
+
+        font-size: 11px;
+      }
+
+      .location-card {
+        top: 47%;
+
+        width: 92%;
+      }
+
+      .map-container {
+        height: 135px;
+      }
+    }
+
+  </style>
+</head>
+
+
+<body>
+
+
+  <!-- =====================================================
+       FIRST PAGE
+       INDEX 3 DESIGN
+  ====================================================== -->
+
+  <section class="wedding-section first-page" id="first-page">
+
+    <div class="scroll-wrapper">
+
+      <img
+        src="13.png"
+        alt="Scroll"
+        class="scroll-image"
+      >
+
+      <div class="scroll-content">
+
+        <h1>আমাদের পরিচয়</h1>
+
+        <div class="decor-line">
+          <span></span>
+          <i></i>
+          <span></span>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!--
+      আমাদের পরিচয় button
+      Click করলে index2.html এ যাবে
+    -->
+
+    <a
+      href="index2.html"
+      class="intro-button"
+    >
+      আমাদের পরিচয়
+      <strong>→</strong>
+    </a>
+
+  </section>
+
+
+
+  <!-- =====================================================
+       SECOND PAGE
+       INDEX 5 DESIGN
+  ====================================================== -->
+
+  <section
+    class="wedding-page second-page"
+    id="second-page"
+  >
+
+
+    <!-- =========================
+         BACKGROUND
+    ========================== -->
+
+    <img
+      src="15.jpg"
+      class="background"
+      alt=""
+    >
+
+
+    <!-- =========================
+         TOP CURTAIN
+    ========================== -->
+
+    <div class="top-curtain">
+
+      <img
+        src="curtain.png"
+        class="curtain"
+        alt=""
+      >
+
+    </div>
+
+
+    <!-- =========================
+         COUNTDOWN
+    ========================== -->
+
+    <section class="countdown-section">
+
+      <div class="date-box">
+
+        <span class="calendar-icon">
+          ▣
+        </span>
+
+        <span>
+          16 December 2026
+        </span>
+
+      </div>
+
+
+      <div class="countdown">
+
+        <div class="time-box">
+
+          <span
+            id="days"
+            class="number"
+          >
+            00
+          </span>
+
+          <span class="label">
+            Days
+          </span>
+
+        </div>
+
+
+        <div class="divider">
+          ✦
+        </div>
+
+
+        <div class="time-box">
+
+          <span
+            id="hours"
+            class="number"
+          >
+            00
+          </span>
+
+          <span class="label">
+            Hours
+          </span>
+
+        </div>
+
+
+        <div class="divider">
+          ✦
+        </div>
+
+
+        <div class="time-box">
+
+          <span
+            id="minutes"
+            class="number"
+          >
+            00
+          </span>
+
+          <span class="label">
+            Minutes
+          </span>
+
+        </div>
+
+
+        <div class="divider">
+          ✦
+        </div>
+
+
+        <div class="time-box">
+
+          <span
+            id="seconds"
+            class="number"
+          >
+            00
+          </span>
+
+          <span class="label">
+            Seconds
+          </span>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         INVITATION BUTTON
+    ========================== -->
+
+    <a
+      href="index4.html"
+      class="invitation-button"
+    >
+
+     
+
+      <span>
+        আমন্ত্রণপএ
+      </span>
+
+      <span class="arrow">
+        →
+      </span>
+
+    </a>
+
+
+    <!-- =========================
+         LOCATION CARD
+    ========================== -->
+
+    <section class="location-card">
+
+      <div class="location-title">
+
+        <div class="location-icon">
+          ●
+        </div>
+
+        <div>
+
+          <small>
+            Bangladesh
+          </small>
+
+          <h2>
+            United Club
+          </h2>
+
+        </div>
+
+      </div>
+
+
+      <!-- Google Map -->
+
+      <div class="map-container">
+
+        <iframe
+          src="https://www.google.com/maps?q=United%20Club%20Khulna%20Bangladesh&output=embed"
+          width="100%"
+          height="100%"
+          style="border:0;"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+
+      </div>
+
+    </section>
+
+
+    <!-- =========================
+         BOTTOM FLOWERS
+    ========================== -->
+
+    <div class="bottom-decoration">
+
+      <div class="flower flower-left">
+        ✽
+      </div>
+
+      <div class="flower flower-right">
+        ✽
+      </div>
+
+    </div>
+
+  </section>
+
+
+
+  <!-- =========================
+       COUNTDOWN JAVASCRIPT
+  ========================== -->
+
+  <script>
+
+    const weddingDate =
+      new Date("December 16, 2026 00:00:00").getTime();
+
+
+    function updateCountdown() {
+
+      const now =
+        new Date().getTime();
+
+      const distance =
+        weddingDate - now;
+
+
+      if (distance <= 0) {
+
+        document.getElementById("days").innerText = "00";
+        document.getElementById("hours").innerText = "00";
+        document.getElementById("minutes").innerText = "00";
+        document.getElementById("seconds").innerText = "00";
+
+        return;
+      }
+
+
+      const days =
+        Math.floor(
+          distance /
+          (1000 * 60 * 60 * 24)
+        );
+
+
+      const hours =
+        Math.floor(
+          (distance %
+            (1000 * 60 * 60 * 24)) /
+          (1000 * 60 * 60)
+        );
+
+
+      const minutes =
+        Math.floor(
+          (distance %
+            (1000 * 60 * 60)) /
+          (1000 * 60)
+        );
+
+
+      const seconds =
+        Math.floor(
+          (distance %
+            (1000 * 60)) /
+          1000
+        );
+
+
+      document.getElementById("days").innerText =
+        String(days).padStart(2, "0");
+
+      document.getElementById("hours").innerText =
+        String(hours).padStart(2, "0");
+
+      document.getElementById("minutes").innerText =
+        String(minutes).padStart(2, "0");
+
+      document.getElementById("seconds").innerText =
+        String(seconds).padStart(2, "0");
+
+    }
+
+
+    updateCountdown();
+
+    setInterval(updateCountdown, 1000);
+
+  </script>
+
+</body>
+
+</html>

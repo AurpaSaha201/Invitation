@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>শুভ বিবাহ - Wedding Invitation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Galada&family=Noto+Serif+Bengali:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Noto Serif Bengali', serif;
+            background-color: #fcf3d9;
+            display: flex;
+            justify-content: center;
+            min-height: 100vh;
+        }
+
+        /* মূল কার্ড - যেখানে ৪ নম্বর ছবি (ব্যাকগ্রাউন্ড মণ্ডলা) বসবে */
+        .invitation-card {
+            width: 100%;
+            max-width: 480px; /* মোবাইলের সাইজ */
+            /* এখানে আপনার ৪ নম্বর ছবির নাম বসান */
+            background-image: url('56.jpg'); 
+            background-size: cover;
+            background-position: center top;
+            background-repeat: no-repeat;
+            position: relative;
+            aspect-ratio: 1024 / 1536; /* ছবির সাইজ অনুযায়ী রেশিও */
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            overflow: hidden;
+        }
+
+
+        /* ছবিগুলোর সাদা ব্যাকগ্রাউন্ড মিশিয়ে দেওয়ার জন্য */
+        .blend-img {
+            mix-blend-mode: multiply;
+            display: block;
+            height:200px;
+            width:150px;
+        }
+
+        /* বর এর সেকশন (বাম দিকে) */
+        .groom-section {
+            position: absolute;
+            top: 10%; /* উপরে থেকে দূরত্ব */
+            left: 8%; /* বাম দিক থেকে দূরত্ব */
+            width: 205%; /* ছবির সাইজ */
+            z-index: 10;
+        }
+
+        /* কন্যা এর সেকশন (ডান দিকে, উপরে) */
+        .bride-section {
+            position: absolute;
+            top: 70%; /* নিচ থেকে উপরে তোলা হয়েছে */
+            right: 5%; /* ডান দিক থেকে দূরত্ব */
+            width: 200%; /* ছবির সাইজ */
+            z-index: 10;
+        }
+
+        /* স্ক্রল এরিয়া */
+        .scroll-container {
+            position: relative;
+            width: 100%;
+        }
+
+        .scroll-container img {
+            width: 100%;
+            display: block;
+        }
+
+        /* স্ক্রলের ভেতরের টেক্সট */
+        .name-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 85%;
+            text-align: center;
+            color: #8b0000;
+        }
+
+        .name-text h2 {
+            font-family: 'Galada', cursive;
+            font-size: 22px;
+            margin-bottom: 4px;
+            color: #b22222;
+            font-weight: normal;
+        }
+
+        .name-text p {
+            font-size: 12px;
+            font-weight: 700;
+            line-height: 1.5;
+            color: #4a0000;
+            margin: 2px 0;
+        }
+
+       /* =========================
+   CENTER WEDDING ITEMS + RIBBON
+========================= */
+
+.center-image {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 55%;
+
+    z-index: 5;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    pointer-events: none;
+}
+
+/* 53.png */
+.center-image .wedding-items {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Ribbon */
+.center-image .ribbon {
+    position: absolute;
+
+    top: 50%;
+    left: 50%;
+
+    transform: translate(-50%, -50%);
+
+    width: 220%;
+
+    height: auto;
+
+    z-index: -1;
+}
+        /* মোবাইলের ছোট স্ক্রিনের জন্য */
+        @media (max-width: 360px) {
+            .name-text h2 { font-size: 18px; }
+            .name-text p { font-size: 10px; }
+            .groom-section { top: 6%; left: 3%; width: 48%; }
+            .bride-section { top: 42%; right: 3%; width: 48%; }
+            .center-image { width: 55%; }
+        }
+
+        @media (min-width: 400px) {
+            .name-text h2 { font-size: 26px; }
+            .name-text p { font-size: 14px; }
+            .groom-section { width: 42%; }
+            .bride-section { width: 42%; }
+            .center-image { width: 48%; }
+        }
+                /* নিচে বাম দিকের ছবিগুলোর জন্য */
+
+
+
+        .bottom-left-images {
+            position: absolute;
+            bottom: 0%; /* একদম নিচে বসানোর জন্য */
+            left: 7%;  /* একদম বাম দিকে বসানোর জন্য */
+            display: flex;
+            flex-direction: column; /* ছবিগুলো একটির নিচে আরেকটি বসবে */
+            gap: 5px; /* ছবিগুলোর মাঝে একটু ফাঁকা জায়গা */
+            z-index: 8;
+            width: 45%; /* ছবিগুলোর সাইজ (প্রয়োজন অনুযায়ী বাড়াতে/কমাতে পারেন) */
+        }
+
+        .bottom-left-images .bottom-img {
+            width: 100%; /* কন্টেইনারের সাইজ অনুযায়ী ছবি বসবে */
+            height: 300px;
+        }
+         .bottom-right-images {
+            position: absolute;
+            top: 15%; /* একদম নিচে বসানোর জন্য */
+            right: 18%;  /* একদম বাম দিকে বসানোর জন্য */
+            display: flex;
+            flex-direction: column; /* ছবিগুলো একটির নিচে আরেকটি বসবে */
+            gap: 5px; /* ছবিগুলোর মাঝে একটু ফাঁকা জায়গা */
+            z-index: 8;
+            width: 25%; /* ছবিগুলোর সাইজ (প্রয়োজন অনুযায়ী বাড়াতে/কমাতে পারেন) */
+        }
+
+        .bottom-right-images .bottom-img {
+            width: 100%; /* কন্টেইনারের সাইজ অনুযায়ী ছবি বসবে */
+            height: auto;
+        }
+        /* =========================
+   BACK BUTTON
+========================= */
+
+.back-button {
+    position: absolute;
+
+    top: 5%;
+    right: 15px;
+
+    transform: translateY(-50%);
+
+    width: 45px;
+    height: 45px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #8b0000;
+
+    border: 2px solid #d7aa43;
+
+    border-radius: 50%;
+
+    color: #fff4d5;
+
+    text-decoration: none;
+
+    font-size: 28px;
+    font-weight: bold;
+
+    z-index: 50;
+
+    box-shadow:
+        0 4px 12px rgba(0,0,0,0.35);
+
+    transition:
+        transform 0.2s ease,
+        background 0.2s ease;
+}
+
+
+/* Hover */
+
+.back-button:hover {
+
+    transform:
+        translateY(-50%)
+        scale(1.08);
+
+    background: #a00000;
+}
+
+
+/* Click */
+
+.back-button:active {
+
+    transform:
+        translateY(-50%)
+        scale(0.92);
+}
+
+
+/* =========================
+   MOBILE
+========================= */
+
+@media (max-width: 600px) {
+
+    .back-button {
+
+        right: 8px;
+
+        width: 38px;
+        height: 38px;
+
+        font-size: 23px;
+
+        border-width: 1.5px;
+    }
+
+}
+    </style>
+</head>
+<body>
+
+    <div class="invitation-card">
+        <a href="index6.html" class="back-button" aria-label="Back to index3">
+
+    <span>←</span>
+
+</a>
+        
+        <!-- বর এর সেকশন (বাম দিকে) -->
+        <div class="groom-section">
+            <div class="scroll-container">
+                <!-- ৩ নম্বর ছবি (স্ক্রল) -->
+                <img src="52.png" alt="Scroll" class="blend-img">
+                <div class="name-text">
+                    <h2>বর</h2>
+                    <p>নাম: আবির সাহা</p>
+                    <p>পিতা: প্রদীপ কুমার সাহা</p>
+                    <p>মাতা: গীতা রানী সাহা</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="center-image">
+
+    <!-- 53 number image -->
+    <img
+        src="53.png"
+        alt="Wedding Items"
+        class="wedding-items"
+    >
+
+    <!-- Ribbon image -->
+    <img
+        src="55.png"
+        alt="Wedding Ribbon"
+        class="ribbon"
+    >
+
+</div>
+
+
+
+
+
+        <!-- কন্যা এর সেকশন (ডান দিকে, উপরে) -->
+        <div class="bride-section">
+            <div class="scroll-container">
+                <!-- ৩ নম্বর ছবি (স্ক্রল) -->
+                <img src="52.png"Scroll" class="blend-img">
+                <div class="name-text">
+                    <h2>কন্যা</h2>
+                    <p>নাম: নদী সাহা</p>
+                    <p>পিতা: স্বর্গীয় শেখর সাহা</p>
+                    <p>মাতা: জলী সাহা </p>
+                </div>
+            </div>
+        </div>
+  <div class="bottom-right-images">
+            <img src="58.png" alt="Pot" class="blend-img bottom-img">
+            
+          
+        </div>
+        <div class="bottom-left-images">
+           <div class="bottom-left-images">
+            <img src="57.png" alt="Pot" class="blend-img bottom-img">
+            
+          
+        </div>
+            
+          
+        </div>
+    </div>
+
+</body>
+</html>
