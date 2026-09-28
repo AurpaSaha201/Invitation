@@ -28,18 +28,18 @@
         }
 
         /* =========================
-            MAIN CARD (Background / Back)
+            MAIN CARD (Background)
         ========================= */
         .invitation-card {
             position: relative;
             width: 100vw;
             height: 100vh;
-            max-width: 520px; /* ব্যাকগ্রাউন্ড সাইজ বড় করা হয়েছে */
+            max-width: 520px;
             max-height: 100vh;
             background-image: url("fontpage.jpg");
             background-repeat: no-repeat;
             background-position: center;
-            background-size: cover; /* ব্যাকগ্রাউন্ড ফুল স্ক্রিন জুড়ে থাকবে */
+            background-size: cover;
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -60,15 +60,15 @@
         }
 
         /* =========================
-            ALPONA (Alpona size boro kora hoyeche)
+            ALPONA (আল্পনার সাইজ বড় করা হয়েছে)
         ========================= */
         .alpona {
             position: absolute;
-            top: 61%;
+            top: 60%;
             left: 50%;
             transform: translate(-50%, -50%);
-            width: 82%; /* আল্পনার সাইজ বড় করা হয়েছে */
-            max-width: 400px;
+            width: 95%; /* আল্পনার সাইজ বড় করা হয়েছে */
+            max-width: 450px;
             z-index: 5;
             pointer-events: none;
             animation: rotateAlpona 18s linear infinite;
@@ -90,15 +90,15 @@
         }
 
         /* =========================
-            ENVELOPE AREA (Envelope size choto kora hoyeche)
+            ENVELOPE AREA (খামের সাইজ ছোট করা হয়েছে)
         ========================= */
         .envelope-link {
             position: relative;
             z-index: 10;
             display: block;
-            width: 38%; /* এনভেলাপের সাইজ ছোট করা হয়েছে */
-            max-width: 175px;
-            margin-top: 14%;
+            width: 35%; /* খামের সাইজ ছোট করা হয়েছে */
+            max-width: 150px;
+            margin-top: 15%;
             text-decoration: none;
             cursor: pointer;
             animation: envelopeBounce 1.6s ease-in-out infinite, envelopeGlow 1.6s ease-in-out infinite;
@@ -131,7 +131,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 20;
-            width: 80%;
+            width: 85%;
             text-align: center;
             pointer-events: none;
         }
@@ -140,7 +140,7 @@
             margin: 1px 0;
             color: #5a1010;
             font-family: "Noto Serif Bengali", serif;
-            font-size: clamp(10px, 2.6vw, 14px); /* ছোট খামের সাথে মানানসই ফন্ট সাইজ */
+            font-size: clamp(9px, 2.3vw, 13px); /* ছোট খামের সাথে মানানসই ফন্ট সাইজ */
             font-weight: 700;
             line-height: 1.3;
             text-shadow: 0 1px 2px rgba(255,255,255,0.8);
@@ -179,7 +179,7 @@
         }
 
         /* =========================
-            RESPONSIVE MEDIA QUERIES FOR PHONES
+            RESPONSIVE MEDIA QUERIES
         ========================= */
         @media (max-width: 480px) {
             .invitation-card {
@@ -187,12 +187,12 @@
                 height: 100vh;
             }
             .alpona {
-                width: 85%; /* ছোট ফোনে আল্পনা আরও প্রমিনেন্ট ও বড় দেখাবে */
+                width: 95%;
             }
             .envelope-link {
-                width: 40%; /* ফোনে খামটি ছোট থাকবে */
-                max-width: 160px;
-                margin-top: 15%;
+                width: 36%;
+                max-width: 145px;
+                margin-top: 16%;
             }
         }
     </style>
