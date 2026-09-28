@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>শুভ বিবাহ - পরিচয়</title>
+
+    <!-- Bengali Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Galada&family=Noto+Serif+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            background: #f8eed8;
+            font-family: "Noto Serif Bengali", serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+            MAIN CONTAINER & BACKGROUND
+        ========================= */
+        .invitation-card {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            max-width: 480px;
+            max-height: 100vh;
+            background-image: url("porichoi.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
+            overflow: hidden;
+        }
+
+        /* =========================
+            CLICK ME BUTTON (Top Right with Animation)
+        ========================= */
+        .click-me-btn {
+            position: absolute;
+            top: 22px;
+            right: 20px;
+            z-index: 100;
+            background: linear-gradient(135deg, #a52a2a, #8b0000);
+            color: #fff;
+            padding: 7px 18px;
+            font-family: "Noto Serif Bengali", serif;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 215, 0, 0.6);
+            transition: all 0.3s ease;
+            animation: buttonPulse 1.8s ease-in-out infinite;
+        }
+
+        .click-me-btn:hover {
+            transform: scale(1.08);
+            background: linear-gradient(135deg, #b22222, #a52a2a);
+        }
+
+        @keyframes buttonPulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 5px rgba(255, 215, 0, 0.4);
+            }
+            50% {
+                transform: scale(1.08);
+                box-shadow: 0 0 18px rgba(255, 215, 0, 0.9);
+            }
+        }
+
+        /* =========================
+            CONTENT AREA
+        ========================= */
+        .content-area {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        /* =========================
+            TOP RIGHT: BORER PORICHOI (Aro niche namano hoyeche)
+        ========================= */
+        .groom-box {
+            position: absolute;
+            top: 24%; /* বরের বক্সটি আরও নিচে নামানো হয়েছে */
+            right: 6%;
+            width: 48%;
+            text-align: right;
+            z-index: 10;
+        }
+
+        .groom-box h2 {
+            font-size: clamp(16px, 4.2vw, 21px);
+            color: #4a0d0d;
+            font-weight: 700;
+            margin-bottom: 4px;
+            border-bottom: 1px solid rgba(107, 23, 23, 0.3);
+            padding-bottom: 2px;
+        }
+
+        .groom-box p {
+            font-size: clamp(12px, 3.7vw, 17px);
+            color: #2c0808;
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
+        /* =========================
+            BOTTOM LEFT: KONAR PORICHOI (Aro opore uthano hoyeche)
+        ========================= */
+        .bride-box {
+            position: absolute;
+            bottom: 22%; /* কনের বক্সটি ফাঁকা জায়গায় উপরে উঠানো হয়েছে */
+            left: 7%;
+            width: 48%;
+            text-align: left;
+            z-index: 10;
+        }
+
+        .bride-box h2 {
+            font-size: clamp(16px, 4.2vw, 21px);
+            color: #4a0d0d;
+            font-weight: 700;
+            margin-bottom: 4px;
+            border-bottom: 1px solid rgba(107, 23, 23, 0.3);
+            padding-bottom: 2px;
+        }
+
+        .bride-box p {
+            font-size: clamp(12px, 3.7vw, 17px);
+            color: #2c0808;
+            line-height: 1.4;
+            font-weight: 500;
+        }
+
+        /* =========================
+            RESPONSIVE MEDIA QUERIES FOR TABLET & LAPTOP
+        ========================= */
+        @media (min-width: 600px) {
+            .invitation-card {
+                max-width: 550px;
+                max-height: 850px;
+                border-radius: 12px;
+            }
+            .groom-box {
+                top: 25%;
+                right: 7%;
+            }
+            .bride-box {
+                bottom: 23%;
+                left: 8%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="invitation-card">
+        
+        <!-- Click Me Button on Top Right with Animation -->
+        <a href="index6.html" class="click-me-btn">← Click Me</a>
+
+        <div class="content-area">
+            
+            <!-- Top Right: বর (Groom) Info -->
+            <div class="groom-box">
+                <h2>আবির সাহা (বর)</h2>
+                <p><strong>পিতা:</strong> প্রদীপ কুমার সাহা</p>
+                <p><strong>মাতা:</strong> গীতা রানী সাহা</p>
+                <p><strong>ঠিকানা:</strong> ১৪,স্যার ইকবাল রোড, খুলনা</p>
+            </div>
+
+            <!-- Bottom Left: কনে (Bride) Info -->
+            <div class="bride-box">
+                <h2>নদী সাহা (কনে)</h2>
+                <p><strong>পিতা:</strong> স্বর্গীয় শেখর সাহা</p>
+                <p><strong>মাতা:</strong> জলী সাহা</p>
+                <p><strong>ঠিকানা:</strong> গোয়ালা,টেকেরহাট</p>
+            </div>
+
+        </div>
+    </div>
+
+</body>
+</html>
