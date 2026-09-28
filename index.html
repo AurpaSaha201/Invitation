@@ -4,292 +4,117 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>শুভ বিবাহ</title>
 
     <!-- Bengali Font -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Galada&family=Noto+Serif+Bengali:wght@400;500;600;700&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Galada&family=Noto+Serif+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-
-        /* =========================
-           RESET
-        ========================= */
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-
-        html,
-        body {
+        html, body {
             width: 100%;
-            min-height: 100%;
-        }
-
-
-        body {
+            height: 100%;
             background: #f8eed8;
-
+            font-family: "Noto Serif Bengali", serif;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
-
-            overflow-x: hidden;
-
-            font-family: "Noto Serif Bengali", serif;
+            align-items: center;
+            overflow: hidden;
         }
 
-
         /* =========================
-           MAIN CARD
+            MAIN CARD (Responsive Frame)
         ========================= */
-
         .invitation-card {
-
             position: relative;
-
             width: 100%;
             max-width: 480px;
-
-            min-height: 100vh;
-
+            height: 100vh;
+            max-height: 900px;
             background-image: url("fontpage.jpg");
-
             background-repeat: no-repeat;
-
-            background-position: center top;
-
+            background-position: center;
             background-size: cover;
-
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.25);
             overflow: hidden;
-
-            box-shadow:
-                0 0 20px rgba(0, 0, 0, 0.25);
         }
-
-
 
         .invitation-content {
-
             position: relative;
-
             width: 100%;
-
-            min-height: 100vh;
-
+            height: 100%;
             display: flex;
-
             flex-direction: column;
-
             align-items: center;
-
-            padding-top: 47%;
-
-            padding-bottom: 100px;
+            justify-content: center;
+            /* ব্যাকগ্রাউন্ড ছবির 'শুভ বিবাহ' লেখার নিচের ফাঁকা জায়গায় খাম ও আল্পনা সেট করতে প্যাডিং সামঞ্জস্য করা হয়েছে */
+            padding-top: 28%; 
         }
 
-
         /* =========================
-           ALPONA
+            ALPONA
         ========================= */
-
         .alpona {
-
             position: absolute;
-
-            top: 61%;
-
+            top: 59%;
             left: 50%;
-
             transform: translate(-50%, -50%);
-
-            width: 68%;
-
-            max-width: 330px;
-
+            width: 65%;
+            max-width: 300px;
             z-index: 5;
-
             pointer-events: none;
-
             animation: rotateAlpona 18s linear infinite;
         }
 
-
         .alpona img {
-
             display: block;
-
             width: 100%;
-
             height: auto;
         }
-
-
-        /* =========================
-           ALPONA ROTATION
-        ========================= */
 
         @keyframes rotateAlpona {
-
             from {
-                transform:
-                    translate(-50%, -50%)
-                    rotate(0deg);
+                transform: translate(-50%, -50%) rotate(0deg);
             }
-
             to {
-                transform:
-                    translate(-50%, -50%)
-                    rotate(360deg);
+                transform: translate(-50%, -50%) rotate(360deg);
             }
         }
 
-
         /* =========================
-           ENVELOPE AREA
+            ENVELOPE AREA
         ========================= */
-
-        .envelope-link {
-
-            position: relative;
-
-            z-index: 10;
-
-            display: block;
-
-            width: 52%;
-
-            max-width: 250px;
-
-            margin-top: 12%;
-
-            text-decoration: none;
-
-            cursor: pointer;
-
-            transition: transform 0.25s ease;
-        }
-
-
-        .envelope-link:hover {
-
-            transform: scale(1.03);
-        }
-
-
-        .envelope-link:active {
-
-            transform: scale(0.96);
-        }
-
-
-        /* =========================
-           ENVELOPE IMAGE
-        ========================= */
-
-        .envelope {
-
-            position: relative;
-
-            width: 100%;
-
-            height: auto;
-
-            display: block;
-
-            z-index: 10;
-        }
-
-
-        /* =========================
-           TEXT ON ENVELOPE
-        ========================= */
-
-        /* .envelope-text {
-
-            position: absolute;
-
-            top: 43%;
-
-            left: 50%;
-
-            transform: translate(-50%, -50%);
-
-            z-index: 20;
-
-            width: 72%;
-
-            text-align: center;
-
-            pointer-events: none;
-        }
-
-
-        .envelope-text p {
-
-            margin: 3px 0;
-
-            color: #6b1717;
-
-            font-family:
-                "Noto Serif Bengali",
-                serif;
-
-            font-size: clamp(
-                13px,
-                3.5vw,
-                19px
-            );
-
-            font-weight: 700;
-
-            line-height: 1.5;
-
-            text-shadow:
-                0 1px 1px rgba(255,255,255,0.5);
-        }
- */
- /* =========================
-           ENVELOPE AREA (New Clear & Prominent Animation)
-        ======================== */
-
         .envelope-link {
             position: relative;
             z-index: 10;
             display: block;
-            width: 52%;
-            max-width: 250px;
-            margin-top: 12%;
+            width: 50%;
+            max-width: 230px;
+            margin-top: 10%;
             text-decoration: none;
             cursor: pointer;
-            
-            /* স্পষ্ট বাউন্স এবং জুম অ্যানিমেশন (কন্টিনিউয়াস চলতে থাকবে) */
             animation: envelopeBounce 1.6s ease-in-out infinite, envelopeGlow 1.6s ease-in-out infinite;
             transition: transform 0.25s ease;
         }
 
-
         .envelope-link:hover {
             transform: scale(1.08);
-            animation-play-state: paused; /* মাউস ধরলে অ্যানিমেশন থামবে */
+            animation-play-state: paused;
         }
-
 
         .envelope-link:active {
             transform: scale(0.95);
         }
 
-
-        /* =========================
-           ENVELOPE IMAGE
-        ========================= */
-
         .envelope {
             position: relative;
             width: 100%;
@@ -298,372 +123,110 @@
             z-index: 10;
         }
 
-
         /* =========================
-           TEXT ON ENVELOPE (Clear Zoom Animation)
+            TEXT ON ENVELOPE
         ========================= */
-
         .envelope-text {
             position: absolute;
-            top: 43%;
+            top: 42%;
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 20;
-            width: 72%;
+            width: 75%;
             text-align: center;
             pointer-events: none;
         }
 
-
         .envelope-text p {
-            margin: 3px 0;
+            margin: 2px 0;
             color: #5a1010;
             font-family: "Noto Serif Bengali", serif;
-            font-size: clamp(13px, 3.5vw, 19px);
+            font-size: clamp(12px, 3.2vw, 17px);
             font-weight: 700;
-            line-height: 1.5;
+            line-height: 1.4;
             text-shadow: 0 1px 2px rgba(255,255,255,0.8);
-            
-            /* লেখার স্পষ্ট জুম-ইন ও জুম-আউট */
             display: inline-block;
             animation: textBounce 1.6s ease-in-out infinite;
         }
 
-
         /* =========================
-           ANIMATION KEYFRAMES (স্পষ্ট ও দৃশ্যমান)
-        ======================== */
-
-        /* ১. খামটি ওপরে-নিচে লাফাবে এবং ছোট-বড় হবে */
+            ANIMATIONS
+        ========================= */
         @keyframes envelopeBounce {
             0%, 100% {
                 transform: translateY(0) scale(1);
             }
             50% {
-                transform: translateY(-12px) scale(1.04);
+                transform: translateY(-8px) scale(1.03);
             }
         }
 
-        /* ২. খামের চারপাশে উজ্জ্বল সোনালী আলোর ছটা */
         @keyframes envelopeGlow {
             0%, 100% {
-                filter: drop-shadow(0 0 5px rgba(245, 200, 80, 0.6));
+                filter: drop-shadow(0 0 4px rgba(245, 200, 80, 0.5));
             }
             50% {
-                filter: drop-shadow(0 0 22px rgba(255, 215, 0, 1));
+                filter: drop-shadow(0 0 18px rgba(255, 215, 0, 0.9));
             }
         }
 
-        /* ৩. লেখা আরও স্পষ্টভাবে বড়-ছোট হবে */
         @keyframes textBounce {
             0%, 100% {
                 transform: scale(1);
             }
             50% {
-                transform: scale(1.1);
+                transform: scale(1.06);
             }
         }
 
         /* =========================
-           SMALL DECORATIVE TEXT
+            RESPONSIVE MEDIA QUERIES
         ========================= */
-
-        .click-hint {
-
-            margin-top: 15px;
-
-            color: #f5d77c;
-
-            font-family: "Galada", cursive;
-
-            font-size: 18px;
-
-            text-align: center;
-
-            opacity: 0.95;
-        }
-
-
-        /* =========================
-           SMALL PHONE
-        ========================= */
-
-        @media (max-width: 360px) {
-
+        @media (max-width: 480px) {
             .invitation-card {
-
-                max-width: 100%;
-
-                min-height: 100vh;
-
-                background-size: cover;
-            }
-
-
-          
-
-            .invitation-content {
-
-                padding-top: 45%;
-            }
-
-
-            .alpona {
-
-                top: 30%;
-
-                width: 70%;
-            }
-
-
-            .envelope-link {
-
-                width: 58%;
-
-                max-width: 220px;
-
-                margin-top: 8%;
-            }
-
-
-            .envelope-text p {
-
-                font-size: 12px;
-
-                line-height: 1.4;
-            }
-
-
-            .click-hint {
-
-                font-size: 15px;
-
-                margin-top: 10px;
-            }
-        }
-
-
-        /* =========================
-           NORMAL PHONE
-        ========================= */
-
-        @media (min-width: 361px) and (max-width: 600px) {
-
-            .invitation-card {
-
                 width: 100%;
-
-                max-width: 480px;
-
-                min-height: 100vh;
-
-                background-size: cover;
+                height: 100vh;
+                max-height: none;
             }
-
-
-            
             .invitation-content {
-
-                padding-top: 44%;
+                padding-top: 30%;
             }
-
-
             .alpona {
-
                 top: 58%;
-
                 width: 68%;
             }
-
-
             .envelope-link {
-
                 width: 55%;
-
-                max-width: 200px;
-
-                margin-top: 34%;
-            }
-
-
-            .envelope-text p {
-
-                font-size: 13px;
-
-                line-height: 1.45;
+                max-width: 210px;
+                margin-top: 12%;
             }
         }
-
-
-        /* =========================
-           TABLET
-        ========================= */
-
-        @media (min-width: 601px) and (max-width: 900px) {
-
-            .invitation-card {
-
-                width: min(100%, 600px);
-
-                max-width: 600px;
-
-                min-height: 100vh;
-
-                background-size: cover;
-            }
-
-
-          
-
-            .invitation-content {
-
-                padding-top: 43%;
-            }
-
-
-            .alpona {
-
-                top: 60%;
-
-                width: 65%;
-
-                max-width: 370px;
-            }
-
-
-            .envelope-link {
-
-                width: 50%;
-
-                max-width: 280px;
-
-                margin-top: 6%;
-            }
-
-
-            .envelope-text p {
-
-                font-size: 17px;
-            }
-        }
-
-
-        /* =========================
-           LAPTOP / DESKTOP
-        ========================= */
-
-        @media (min-width: 901px) {
-
-            .invitation-card {
-
-                width: 480px;
-
-                max-width: 480px;
-
-                min-height: 100vh;
-
-                background-size: cover;
-            }
-
-
-
-
-            .invitation-content {
-
-                padding-top: 44%;
-            }
-
-
-            .alpona {
-
-                top: 60%;
-
-                width: 68%;
-
-                max-width: 325px;
-            }
-
-
-            .envelope-link {
-
-                width: 52%;
-
-                max-width: 250px;
-
-                margin-top: 8%;
-            }
-        }
-
     </style>
 </head>
 
-
 <body>
 
-
     <div class="invitation-card">
-
-
-     
-
-
         <div class="invitation-content">
 
-
-            <!-- =========================
-                 ROTATING ALPONA
-            ========================= -->
-
+            <!-- ROTATING ALPONA -->
             <div class="alpona">
-
-                <img
-                    src="4.png"
-                    alt="Alpona"
-                >
-
+                <img src="4.png" alt="Alpona">
             </div>
 
-
-            <!-- =========================
-                 CLICKABLE ENVELOPE
-            ========================= -->
-
-            <a
-                href="index6.html"
-                class="envelope-link"
-                aria-label="Open Wedding Invitation"
-            >
-
-                <img
-                    src="31.png"
-                    alt="Wedding Invitation Envelope"
-                    class="envelope"
-                >
-
+            <!-- CLICKABLE ENVELOPE -->
+            <a href="index6.html" class="envelope-link" aria-label="Open Wedding Invitation">
+                <img src="31.png" alt="Wedding Invitation Envelope" class="envelope">
 
                 <!-- Text on envelope -->
-
                 <div class="envelope-text">
-
-                    <p>
-                        ভালোবাসা অঙ্গীকারে
-                    </p>
-
-                    <p>
-                        আপনার নিমন্ত্রণ
-                    </p>
-
+                    <p>ভালোবাসা অঙ্গীকারে</p>
+                    <p>আপনার নিমন্ত্রণ</p>
                 </div>
-
             </a>
 
-
-
         </div>
-
     </div>
 
-
 </body>
-
 </html>
