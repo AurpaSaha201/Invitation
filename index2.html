@@ -7,7 +7,7 @@
 
     <title>শুভ বিবাহ - Wedding Invitation</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Galada&family=Noto+Serif+Bengali:wght@400;700&display=swap"
+    <link href="https://fonts.googleapis.com/css2?family=Galada&family=Noto+Serif+Bengali:wght@500;600;700&display=swap"
         rel="stylesheet">
 
     <style>
@@ -40,15 +40,13 @@
             position: relative;
             width: 100%;
             max-width: 480px;
-            /* aspect-ratio কমিয়ে 1380 করা হয়েছে যাতে নিচে গ্যাপ না থাকে */
             aspect-ratio: 1024 / 1780;
             background-image: url("56.jpg");
             background-repeat: no-repeat;
             background-position: center top;
-            /* cover ব্যবহার করলে ছবি পুরো জায়গা ঢেকে দেয় */
             background-size: cover;
             overflow: hidden;
-            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.25);
         }
 
         /* =========================================
@@ -66,21 +64,21 @@
 
         .groom-section {
             position: absolute;
-            top: 8%;
-            left: 7%;
-            width: 45%;
+            top: 7.5%;
+            left: 6%;
+            width: 47%;
             z-index: 10;
         }
 
         /* =========================================
-           BRIDE (top কমিয়ে 64% করা হয়েছে)
+           BRIDE
         ========================================= */
 
         .bride-section {
             position: absolute;
-            top: 74%;
-            right: 4%;
-            width: 45%;
+            top: 72.5%;
+            right: 3%;
+            width: 47%;
             z-index: 10;
         }
 
@@ -115,18 +113,19 @@
 
         .name-text h2 {
             font-family: "Galada", cursive;
-            font-size: clamp(18px, 4vw, 25px);
-            margin-bottom: 4px;
-            color: #b22222;
+            font-size: clamp(20px, 4.5vw, 28px);
+            margin-bottom: 6px;
+            color: #9c1b1b;
             font-weight: normal;
+            text-shadow: 0 1px 2px rgba(0, 0, 0, 0.15);
         }
 
         .name-text p {
-            font-size: clamp(9px, 2.2vw, 13px);
+            font-size: clamp(11px, 2.6vw, 15px);
             font-weight: 700;
-            line-height: 1.45;
-            color: #4a0000;
-            margin: 2px 0;
+            line-height: 1.5;
+            color: #3d1400;
+            margin: 3px 0;
         }
 
         /* =========================================
@@ -163,14 +162,14 @@
         }
 
         /* =========================================
-           LEFT POT (সাইজ 16% করা হয়েছে)
+           LEFT POT
         ========================================= */
 
         .bottom-left-images {
             position: absolute;
-            bottom: 2%; /* নিচে বসানোর জন্য */
+            bottom: 2%;
             left: 2%;
-            width: 20%; /* ছোট করা হয়েছে */
+            width: 20%;
             z-index: 8;
         }
 
@@ -201,8 +200,19 @@
         }
 
         /* =========================================
-           CLICK ME BUTTON
+           CLICK ME BUTTON ANIMATION & STYLE
         ========================================= */
+
+        @keyframes pulse-bounce {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+            }
+            50% {
+                transform: scale(1.08);
+                box-shadow: 0 6px 20px rgba(215, 170, 67, 0.6);
+            }
+        }
 
         .back-button {
             position: absolute;
@@ -223,12 +233,13 @@
             font-size: 18px;
             font-weight: bold;
             z-index: 50;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
             white-space: nowrap;
-            transition: 0.2s ease;
+            animation: pulse-bounce 2s infinite ease-in-out;
+            transition: background 0.2s ease;
         }
 
         .back-button:hover {
+            animation: none;
             transform: scale(1.05);
             background: #a00000;
         }
@@ -252,21 +263,21 @@
             .groom-section {
                 top: 7%;
                 left: 4%;
-                width: 48%;
+                width: 50%;
             }
 
             .bride-section {
-                top: 72%;
-                right: 3%;
-                width: 48%;
+                top: 71.5%;
+                right: 2%;
+                width: 50%;
             }
 
             .name-text h2 {
-                font-size: 17px;
+                font-size: 19px;
             }
 
             .name-text p {
-                font-size: 8px;
+                font-size: 10px;
                 line-height: 1.4;
             }
 
@@ -277,7 +288,7 @@
 
             .bottom-left-images {
                 left: 1%;
-                width: 20%; /* ছোট স্ক্রিনে আরও ছোট */
+                width: 20%;
                 bottom: 2%;
             }
 
@@ -310,23 +321,23 @@
             }
 
             .groom-section {
-                top: 8%;
-                left: 6%;
-                width: 45%;
+                top: 7.5%;
+                left: 5%;
+                width: 47%;
             }
 
             .bride-section {
                 top: 72%;
-                right: 4%;
-                width: 45%;
+                right: 3%;
+                width: 47%;
             }
 
             .name-text h2 {
-                font-size: 20px;
+                font-size: 22px;
             }
 
             .name-text p {
-                font-size: 10px;
+                font-size: 12px;
             }
 
             .center-image {
@@ -369,15 +380,23 @@
             }
 
             .groom-section {
-                top: 8%;
-                left: 7%;
-                width: 44%;
+                top: 7.5%;
+                left: 6%;
+                width: 46%;
             }
 
             .bride-section {
                 top: 72%;
-                right: 5%;
-                width: 44%;
+                right: 4%;
+                width: 46%;
+            }
+
+            .name-text h2 {
+                font-size: 25px;
+            }
+
+            .name-text p {
+                font-size: 13.5px;
             }
 
             .center-image {
@@ -430,7 +449,7 @@
 
     <div class="invitation-card">
 
-        <!-- BACK BUTTON -->
+        <!-- BACK BUTTON WITH ANIMATION -->
         <a href="index6.html" class="back-button" aria-label="Back to index6">
             <span>← Click Me</span>
         </a>
@@ -461,7 +480,7 @@
                 <div class="name-text">
                     <h2>কন্যা</h2>
                     <p>নাম: নদী সাহা</p>
-                    <p>পিতা: স্বর্গীয় শেখর সাহা</p>
+                    <p>পিতা: স্বর্গীয় শেখর সাহা</p>
                     <p>মাতা: জলী সাহা</p>
                 </div>
             </div>
@@ -482,26 +501,3 @@
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

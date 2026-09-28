@@ -211,7 +211,7 @@
            TEXT ON ENVELOPE
         ========================= */
 
-        .envelope-text {
+        /* .envelope-text {
 
             position: absolute;
 
@@ -254,7 +254,115 @@
             text-shadow:
                 0 1px 1px rgba(255,255,255,0.5);
         }
+ */
+ /* =========================
+           ENVELOPE AREA (New Clear & Prominent Animation)
+        ======================== */
 
+        .envelope-link {
+            position: relative;
+            z-index: 10;
+            display: block;
+            width: 52%;
+            max-width: 250px;
+            margin-top: 12%;
+            text-decoration: none;
+            cursor: pointer;
+            
+            /* স্পষ্ট বাউন্স এবং জুম অ্যানিমেশন (কন্টিনিউয়াস চলতে থাকবে) */
+            animation: envelopeBounce 1.6s ease-in-out infinite, envelopeGlow 1.6s ease-in-out infinite;
+            transition: transform 0.25s ease;
+        }
+
+
+        .envelope-link:hover {
+            transform: scale(1.08);
+            animation-play-state: paused; /* মাউস ধরলে অ্যানিমেশন থামবে */
+        }
+
+
+        .envelope-link:active {
+            transform: scale(0.95);
+        }
+
+
+        /* =========================
+           ENVELOPE IMAGE
+        ========================= */
+
+        .envelope {
+            position: relative;
+            width: 100%;
+            height: auto;
+            display: block;
+            z-index: 10;
+        }
+
+
+        /* =========================
+           TEXT ON ENVELOPE (Clear Zoom Animation)
+        ========================= */
+
+        .envelope-text {
+            position: absolute;
+            top: 43%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 20;
+            width: 72%;
+            text-align: center;
+            pointer-events: none;
+        }
+
+
+        .envelope-text p {
+            margin: 3px 0;
+            color: #5a1010;
+            font-family: "Noto Serif Bengali", serif;
+            font-size: clamp(13px, 3.5vw, 19px);
+            font-weight: 700;
+            line-height: 1.5;
+            text-shadow: 0 1px 2px rgba(255,255,255,0.8);
+            
+            /* লেখার স্পষ্ট জুম-ইন ও জুম-আউট */
+            display: inline-block;
+            animation: textBounce 1.6s ease-in-out infinite;
+        }
+
+
+        /* =========================
+           ANIMATION KEYFRAMES (স্পষ্ট ও দৃশ্যমান)
+        ======================== */
+
+        /* ১. খামটি ওপরে-নিচে লাফাবে এবং ছোট-বড় হবে */
+        @keyframes envelopeBounce {
+            0%, 100% {
+                transform: translateY(0) scale(1);
+            }
+            50% {
+                transform: translateY(-12px) scale(1.04);
+            }
+        }
+
+        /* ২. খামের চারপাশে উজ্জ্বল সোনালী আলোর ছটা */
+        @keyframes envelopeGlow {
+            0%, 100% {
+                filter: drop-shadow(0 0 5px rgba(245, 200, 80, 0.6));
+            }
+            50% {
+                filter: drop-shadow(0 0 22px rgba(255, 215, 0, 1));
+            }
+        }
+
+        /* ৩. লেখা আরও স্পষ্টভাবে বড়-ছোট হবে */
+        @keyframes textBounce {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
 
         /* =========================
            SMALL DECORATIVE TEXT

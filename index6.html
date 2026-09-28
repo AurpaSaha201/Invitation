@@ -157,53 +157,79 @@
        INTRO BUTTON
     ========================== */
 
-    .intro-button {
+  
+.intro-button {
       position: absolute;
-
       top: calc(48% + 190px);
       right: 50%;
-
       transform: translateX(50%);
-
       display: flex;
-
       align-items: center;
       justify-content: center;
-
       gap: 10px;
-
       min-width: 260px;
-
       padding: 13px 25px;
-
       border: 2px solid #f4d65d;
       border-radius: 40px;
-
       background: #8d111d;
-
       color: white;
-
       font-family: "Noto Serif Bengali", serif;
       font-size: 18px;
       font-weight: 700;
-
       text-decoration: none;
-
       cursor: pointer;
-
-      transition: 0.3s ease;
-
+      overflow: hidden; /* শাইন ইফেক্টের জন্য জরুরি */
       z-index: 20;
+      
+      /* কন্টিনিউয়াস পাল্স অ্যানিমেশন (সবসময় চলতে থাকবে) */
+      animation: pulseGlowDeep 1.8s infinite;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    /* বাটনের ভেতরে চকচকে গ্লো/শাইন এফেক্ট */
+    .intro-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.4), transparent);
+      transition: 0.5s;
+    }
+
+    .intro-button:hover::before {
+      left: 100%;
     }
 
     .intro-button strong {
       font-size: 22px;
+      display: inline-block;
+      transition: transform 0.3s ease;
     }
 
+    /* হোভার করলে বাটন বড় হবে এবং ডিপ শ্যাডো দেখাবে */
     .intro-button:hover {
       transform: translateX(50%) scale(1.03);
+      box-shadow: 0 10px 30px rgba(100, 5, 13, 0.8);
     }
 
+    .intro-button:hover strong {
+      transform: translateX(6px);
+    }
+
+    /* আরও ডিপ এবং আকর্ষণীয় পাল্স কী-ফ্রেম অ্যানিমেশন */
+    @keyframes pulseGlowDeep {
+      0% {
+        box-shadow: 0 0 0 0 rgba(244, 214, 93, 0.9), 0 0 15px rgba(141, 17, 29, 0.8);
+      }
+      70% {
+        box-shadow: 0 0 0 16px rgba(244, 214, 93, 0), 0 0 25px rgba(141, 17, 29, 0);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(244, 214, 93, 0), 0 0 15px rgba(141, 17, 29, 0);
+      }
+    }
 
     /* =========================
        SECOND PAGE
@@ -420,7 +446,7 @@
     /* =========================
        INVITATION BUTTON
     ========================== */
-
+/* 
     .invitation-button {
       position: absolute;
 
@@ -472,8 +498,96 @@
 
       line-height: 1;
     }
+ */
+.invitation-button {
+      position: absolute;
+      top: 40%;
+      right: 5%;
+      z-index: 12;
+      width: 280px;
+      padding: 11px 18px;
+      border: 2px solid #d6a72b;
+      border-radius: 45px;
+      background: rgba(55, 0, 0, 0.72);
+      color: #fff0c8;
+      text-decoration: none;
+      font-size: 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      overflow: hidden; 
+      
+      /* আগের ডিপ পাল্স অ্যানিমেশন */
+      animation: invitePulseDeep 1.8s infinite;
+      transition: all 0.3s ease;
+    }
 
+    /* বাটনের ভেতরের লেখার জন্য জুম-ইন এবং জুম-আউট অ্যানিমেশন */
+    .invitation-button span:not(.arrow) {
+      display: inline-block;
+      animation: textZoomPulse 1.5s ease-in-out infinite;
+    }
 
+    /* শাইন ইফেক্ট */
+    .invitation-button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(120deg, transparent, rgba(214, 167, 43, 0.3), transparent);
+      transition: 0.5s;
+    }
+
+    .invitation-button:hover::before {
+      left: 100%;
+    }
+
+    .invitation-button:hover {
+      background: #700808;
+      transform: translateY(-3px) scale(1.02);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.6), 0 0 20px rgba(214, 167, 43, 0.5);
+    }
+
+    .envelope-icon {
+      font-size: 23px;
+    }
+
+    .arrow {
+      font-size: 28px;
+      line-height: 1;
+      display: inline-block;
+      transition: transform 0.3s ease;
+    }
+
+    .invitation-button:hover .arrow {
+      transform: translateX(6px);
+    }
+
+    /* বাটনের ডিপ পাল্স কী-ফ্রেম */
+    @keyframes invitePulseDeep {
+      0% {
+        box-shadow: 0 0 0 0 rgba(214, 167, 43, 0.8), inset 0 0 10px rgba(112, 8, 8, 0.5);
+      }
+      70% {
+        box-shadow: 0 0 0 15px rgba(214, 167, 43, 0), inset 0 0 20px rgba(214, 167, 43, 0.3);
+      }
+      100% {
+        box-shadow: 0 0 0 0 rgba(214, 167, 43, 0), inset 0 0 10px rgba(112, 8, 8, 0.5);
+      }
+    }
+
+    /* লেখার জুম-ইন ও জুম-আউট অ্যানিমেশন কী-ফ্রেম */
+    @keyframes textZoomPulse {
+      0%, 100% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.08); /* লেখাটি ৮% বড় হয়ে আবার স্বাভাবিক হবে */
+      }
+    }
     /* =========================
        LOCATION CARD
     ========================== */
@@ -1262,10 +1376,7 @@
     </div>
 
 
-    <!--
-      আমাদের পরিচয় button
-      Click করলে index2.html এ যাবে
-    -->
+ 
 
     <a
       href="index2.html"
