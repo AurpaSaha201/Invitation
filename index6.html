@@ -446,59 +446,7 @@
     /* =========================
        INVITATION BUTTON
     ========================== */
-/* 
-    .invitation-button {
-      position: absolute;
 
-      top: 40%;
-      right: 5%;
-
-      z-index: 12;
-
-      width: 280px;
-
-      padding: 11px 18px;
-
-      border: 2px solid #d6a72b;
-      border-radius: 45px;
-
-      background: rgba(55, 0, 0, 0.72);
-
-      color: #fff0c8;
-
-      text-decoration: none;
-
-      font-size: 20px;
-
-      display: flex;
-
-      align-items: center;
-      justify-content: center;
-
-      gap: 12px;
-
-      transition: all 0.3s ease;
-    }
-
-    .invitation-button:hover {
-      background: #700808;
-
-      transform: translateY(-3px);
-
-      box-shadow:
-        0 7px 25px rgba(0, 0, 0, 0.4);
-    }
-
-    .envelope-icon {
-      font-size: 23px;
-    }
-
-    .arrow {
-      font-size: 28px;
-
-      line-height: 1;
-    }
- */
 .invitation-button {
       position: absolute;
       top: 40%;
@@ -566,6 +514,43 @@
       transform: translateX(6px);
     }
 
+    .intro-button.onushtan-button {
+      top: calc(48% + 290px);
+      left: 56%;                /* Center (50%) theke ektu dan dike fix kora holo */
+      transform: none;          /* Center alignment transform bad dewa holo */
+    }
+
+    /* Tablet device-er jonno position */
+    @media (min-width: 601px) and (max-width: 900px) {
+      .intro-button.onushtan-button {
+        top: calc(47% + 265px);
+        left: 55%;
+        transform: none;
+      }
+    }
+
+    /* Mobile device-er jonno position */
+    @media (min-width: 401px) and (max-width: 600px) {
+      .intro-button.onushtan-button {
+        top: calc(44% + 205px);
+        left: 54%;
+        transform: none;
+      }
+    }
+
+    /* Small phone-er jonno position */
+    @media (max-width: 400px) {
+      .intro-button.onushtan-button {
+        top: calc(43% + 210px);
+        left: 53%;
+        transform: none;
+      }
+    }
+
+
+
+
+    
     /* বাটনের ডিপ পাল্স কী-ফ্রেম */
     @keyframes invitePulseDeep {
       0% {
@@ -1385,7 +1370,13 @@
       আমাদের পরিচয়
       <strong>→</strong>
     </a>
-
+<a
+      href="index2.html"
+      class="intro-button onushtan-button"
+    >
+      অনুষ্ঠানসূচি
+      <strong>→</strong>
+    </a>
   </section>
 
 

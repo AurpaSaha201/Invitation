@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="bn">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>অনুষ্ঠান সূচী</title>
+
+    <!-- Bengali Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            width: 100%;
+            height: 100%;
+            background: #2b0000;
+            font-family: "Noto Serif Bengali", serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+            MAIN CONTAINER & BACKGROUND (97.jpg)
+        ========================= */
+        .invitation-card {
+            position: relative;
+            width: 100vw;
+            height: 100vh;
+            max-width: 480px;
+            max-height: 100vh;
+            background-image: url("97.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            box-shadow: 0 0 25px rgba(0, 0, 0, 0.4);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        /* =========================
+            CLICK ME BUTTON (Top Right with Animation)
+        ========================= */
+        .click-me-btn {
+            position: absolute;
+            top: 35px;
+            right: 30px;
+            z-index: 100;
+            background: linear-gradient(135deg, #a52a2a, #8b0000);
+            color: #fff;
+            padding: 6px 16px;
+            font-family: "Noto Serif Bengali", serif;
+            font-size: 13px;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 25px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 215, 0, 0.6);
+            transition: all 0.3s ease;
+            animation: buttonPulse 1.8s ease-in-out infinite;
+        }
+
+        .click-me-btn:hover {
+            transform: scale(1.08);
+            background: linear-gradient(135deg, #b22222, #a52a2a);
+        }
+
+        @keyframes buttonPulse {
+            0%, 100% {
+                transform: scale(1);
+                box-shadow: 0 0 5px rgba(255, 215, 0, 0.4);
+            }
+            50% {
+                transform: scale(1.08);
+                box-shadow: 0 0 18px rgba(255, 215, 0, 0.9);
+            }
+        }
+
+        /* =========================
+            EVENT SCHEDULE CONTENT BOX
+        ========================= */
+        .schedule-box {
+            position: relative;
+            width: 85%;
+            text-align: center;
+            z-index: 10;
+            margin-top: 20px;
+        }
+
+        /* Main Heading: অনুষ্ঠান সূচী */
+        .schedule-title {
+            font-size: clamp(20px, 5.5vw, 26px);
+            color: #4a0d0d;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 0.5px;
+        }
+
+        /* Decorative Line under Heading */
+        .divider {
+            width: 130px;
+            height: 2px;
+            background-color: #a52a2a;
+            margin: 0 auto 18px auto;
+            position: relative;
+        }
+
+        .divider::before, .divider::after {
+            content: '';
+            position: absolute;
+            top: -3px;
+            width: 8px;
+            height: 8px;
+            background-color: #a52a2a;
+            border-radius: 50%;
+        }
+
+        .divider::before { left: -12px; }
+        .divider::after { right: -12px; }
+
+        /* Schedule Details Text */
+        .schedule-details p {
+            font-size: clamp(11px, 3.2vw, 15px);
+            color: #2c0808;
+            line-height: 1.6;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+
+        /* Responsive adjustments for Tablets/Laptops */
+        @media (min-width: 600px) {
+            .invitation-card {
+                max-width: 550px;
+                max-height: 850px;
+                border-radius: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="invitation-card">
+        
+        <!-- Click Me Button on Top Right with Animation -->
+        <a href="index6.html" class="click-me-btn">← Back</a>
+
+        <!-- Schedule Content Area -->
+        <div class="schedule-box">
+            <h2 class="schedule-title">অনুষ্ঠান সূচী</h2>
+            <div class="divider"></div>
+
+            <div class="schedule-details">
+                <p><strong> গাত্র হরিদ্রা :</strong> ২৬শে অগ্রহায়ণ, ১৪৩৩   (ইং ১৩ ডিসেম্বর, ২০২৬) রবিবার ।</p>
+                
+                <p><strong>শুভ বিবাহ :</strong> ২৬শে অগ্রহায়ণ, ১৪৩৩ সন (ইং ১৩ ডিসেম্বর, ২০২৬) রবিবার  ।</p>
+                
+                <p><strong>বিবাহ লগ্ন :</strong> রাত্রি ২/২৭/১০ হতে শেষ রাত্রি ০৪/৪০/২৩ এর মধ্যে ।</p>
+                
+                <p><strong>প্রীতিভোজ :</strong> ৩০ অগ্রহায়ণ, ১৪৩৩ সন (ইং ১৬ ডিসেম্বর, ২০২৬) বুধবার ।<br>
+                <strong>সময় :</strong> দুপুর ১.০০ টা </p>
+                
+                <p><strong>স্থান :</strong> ইউনাইটেড ক্লাব, খুলনা ।</p>
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>
